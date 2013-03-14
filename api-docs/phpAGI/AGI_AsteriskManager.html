@@ -1,0 +1,1820 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class AGI_AsteriskManager</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> AGI_AsteriskManager</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Asterisk Manager class</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+config+manager.conf">http://www.voip-info.org/wiki-Asterisk+config+manager.conf</a></li>
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+manager+API">http://www.voip-info.org/wiki-Asterisk+manager+API</a></li>
+				<li><span class="field">example:</span> <a href="../__examplesource/exsource_ome_phpagi_devel_phpagi_examples_sip_show_peer.php_a884030dbf98b0261079f0d0ff35ab7b.html">Get information about a sip peer</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_phpagi-asmanager.php.html">/phpagi-asmanager.php</a> (line <span class="field"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a42">42</a></span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																																								<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$config" title="details" class="var-name">$config</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$event_handlers" title="details" class="var-name">$event_handlers</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type"><a href="../phpAGI/AGI.html">AGI</a></span>
+					<a href="#$pagi" title="details" class="var-name">$pagi</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">integer</span>
+					<a href="#$port" title="details" class="var-name">$port</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">string</span>
+					<a href="#$server" title="details" class="var-name">$server</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$socket" title="details" class="var-name">$socket</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/PrivateVariable.png" alt=" " />
+					<span class="var-type">boolean</span>
+					<a href="#$_logged_in" title="details" class="var-name">$_logged_in</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																																																																																																																																																								<div class="method-definition">
+					<img src="../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">AGI_AsteriskManager</span>
+										<a href="#AGI_AsteriskManager" title="details" class="method-name">AGI_AsteriskManager</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$config</span> = <span class="var-default">NULL</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$optconfig</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#AbsoluteTimeout" title="details" class="method-name">AbsoluteTimeout</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$timeout</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#add_event_handler" title="details" class="method-name">add_event_handler</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$event</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$callback</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#ChangeMonitor" title="details" class="method-name">ChangeMonitor</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$file</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#Command" title="details" class="method-name">Command</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$command</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$actionid</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#connect" title="details" class="method-name">connect</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$server</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$username</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$secret</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#disconnect" title="details" class="method-name">disconnect</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#Events" title="details" class="method-name">Events</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$eventmask</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#ExtensionState" title="details" class="method-name">ExtensionState</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$exten</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$context</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$actionid</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#GetVar" title="details" class="method-name">GetVar</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$variable</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$actionid</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#Hangup" title="details" class="method-name">Hangup</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#IAXPeers" title="details" class="method-name">IAXPeers</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#ListCommands" title="details" class="method-name">ListCommands</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$actionid</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#log" title="details" class="method-name">log</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$message</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$level</span> = <span class="var-default">1</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#Logoff" title="details" class="method-name">Logoff</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#MailboxCount" title="details" class="method-name">MailboxCount</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$mailbox</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$actionid</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#MailboxStatus" title="details" class="method-name">MailboxStatus</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$mailbox</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$actionid</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#Monitor" title="details" class="method-name">Monitor</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">NULL</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$mix</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#Originate" title="details" class="method-name">Originate</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$exten</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$context</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$priority</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$application</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span> = <span class="var-default">NULL</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$timeout</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$callerid</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$variable</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$account</span> = <span class="var-default">NULL</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$async</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$actionid</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#ParkedCalls" title="details" class="method-name">ParkedCalls</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$actionid</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#Ping" title="details" class="method-name">Ping</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/PrivateMethod.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#process_event" title="details" class="method-name">process_event</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$parameters</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#QueueAdd" title="details" class="method-name">QueueAdd</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$queue</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$interface</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$penalty</span> = <span class="var-default">0</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#QueueRemove" title="details" class="method-name">QueueRemove</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$queue</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$interface</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#Queues" title="details" class="method-name">Queues</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#QueueStatus" title="details" class="method-name">QueueStatus</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$actionid</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#Redirect" title="details" class="method-name">Redirect</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$extrachannel</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$exten</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$context</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$priority</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#send_request" title="details" class="method-name">send_request</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$action</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$parameters</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#SetCDRUserField" title="details" class="method-name">SetCDRUserField</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$userfield</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$append</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#SetVar" title="details" class="method-name">SetVar</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$variable</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#Status" title="details" class="method-name">Status</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$actionid</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#StopMonitor" title="details" class="method-name">StopMonitor</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#wait_response" title="details" class="method-name">wait_response</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$allow_timeout</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#ZapDialOffhook" title="details" class="method-name">ZapDialOffhook</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$zapchannel</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$number</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#ZapDNDoff" title="details" class="method-name">ZapDNDoff</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$zapchannel</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#ZapDNDon" title="details" class="method-name">ZapDNDon</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$zapchannel</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#ZapHangup" title="details" class="method-name">ZapHangup</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$zapchannel</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#ZapShowChannels" title="details" class="method-name">ZapShowChannels</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$actionid</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#ZapTransfer" title="details" class="method-name">ZapTransfer</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$zapchannel</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$config" id="$config"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$config</span>
+						(line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a50">50</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Config variables</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$event_handlers" id="$event_handlers"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$event_handlers</span>
+						(line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a89">89</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Event Handlers</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$pagi" id="$pagi"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type"><a href="../phpAGI/AGI.html">AGI</a></span>
+			<span class="var-name">$pagi</span>
+						(line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a81">81</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Parent AGI</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$port" id="$port"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">integer</span>
+			<span class="var-name">$port</span>
+						(line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a73">73</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Port on the server we are connected to</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$server" id="$server"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$server</span>
+						(line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a65">65</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Server we are connected to</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$socket" id="$socket"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$socket</span>
+			 = <span class="var-default"> NULL</span>			(line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a57">57</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Socket</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$_logged_in" id="$_logged_in"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/PrivateVariable.png" />
+		<span class="var-title">
+			<span class="var-type">boolean</span>
+			<span class="var-name">$_logged_in</span>
+			 = <span class="var-default"> FALSE</span>			(line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a97">97</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Whether we're successfully logged in</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodAGI_AsteriskManager" id="AGI_AsteriskManager"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Constructor.png" />
+		<span class="method-title">Constructor AGI_AsteriskManager</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a105">105</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructor</p>
+	
+	<div class="method-signature">
+		<span class="method-result">AGI_AsteriskManager</span>
+		<span class="method-name">
+			AGI_AsteriskManager
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$config</span> = <span class="var-default">NULL</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$optconfig</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$config</span><span class="var-description">: is the name of the config file to parse or a parent agi from which to read the config</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$optconfig</span><span class="var-description">: is an array of configuration vars and vals, stuffed into $this-&gt;config['asmanager']</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodAbsoluteTimeout" id="AbsoluteTimeout"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">AbsoluteTimeout</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a295">295</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set Absolute Timeout</p>
+<p class="description"><p>Hangup a channel after a certain time.</p></p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+AbsoluteTimeout">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+AbsoluteTimeout</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			AbsoluteTimeout
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$timeout</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$channel</span><span class="var-description">: Channel name to hangup</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$timeout</span><span class="var-description">: Maximum duration of the call (sec)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodadd_event_handler" id="add_event_handler"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">add_event_handler</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a785">785</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add event handler</p>
+<p class="description"><p>Known Events include ( http://www.voip-info.org/wiki-asterisk+manager+events )    Link - Fired when two voice channels are linked together and voice data exchange commences.    Unlink - Fired when a link between two voice channels is discontinued, for example, just before call completion.    Newexten -    Hangup -    Newchannel -    Newstate -    Reload - Fired when the &quot;RELOAD&quot; console command is executed.    Shutdown -    ExtensionStatus -    Rename -    Newcallerid -    Alarm -    AlarmClear -    Agentcallbacklogoff -    Agentcallbacklogin -    Agentlogoff -    MeetmeJoin -    MessageWaiting -    join -    leave -    AgentCalled -    ParkedCall - Fired after ParkedCalls    Cdr -    ParkedCallsComplete -    QueueParams -    QueueMember -    QueueStatusEnd -    Status -    StatusComplete -    ZapShowChannels - Fired after ZapShowChannels    ZapShowChannelsComplete -</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> sucess</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			add_event_handler
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$event</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$callback</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$event</span><span class="var-description">: type or * for default handler</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$callback</span><span class="var-description">: function</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodChangeMonitor" id="ChangeMonitor"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">ChangeMonitor</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a307">307</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Change monitoring filename of a channel</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+ChangeMonitor">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+ChangeMonitor</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			ChangeMonitor
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$file</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$channel</span><span class="var-description">: the channel to record.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$file</span><span class="var-description">: the new name of the file created in the monitor spool directory.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodCommand" id="Command"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">Command</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a321">321</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Execute Command</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+CLI">http://www.voip-info.org/wiki-Asterisk+CLI</a></li>
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+Command">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+Command</a></li>
+				<li><span class="field">example:</span> <a href="../__examplesource/exsource_ome_phpagi_devel_phpagi_examples_sip_show_peer.php_a884030dbf98b0261079f0d0ff35ab7b.html">Get information about a sip peer</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			Command
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$command</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$actionid</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$command</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$actionid</span><span class="var-description">: message matching variable</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodconnect" id="connect"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">connect</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a215">215</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Connect to Asterisk</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true on success</li>
+				<li><span class="field">example:</span> <a href="../__examplesource/exsource_ome_phpagi_devel_phpagi_examples_sip_show_peer.php_a884030dbf98b0261079f0d0ff35ab7b.html">Get information about a sip peer</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			connect
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$server</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$username</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$secret</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$server</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$username</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$secret</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddisconnect" id="disconnect"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">disconnect</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a275">275</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Disconnect</p>
+	<ul class="tags">
+				<li><span class="field">example:</span> <a href="../__examplesource/exsource_ome_phpagi_devel_phpagi_examples_sip_show_peer.php_a884030dbf98b0261079f0d0ff35ab7b.html">Get information about a sip peer</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			disconnect
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodEvents" id="Events"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">Events</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a334">334</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Enable/Disable sending of events to this manager</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+Events">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+Events</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			Events
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$eventmask</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$eventmask</span><span class="var-description">: is either 'on', 'off', or 'system,call,log'</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodExtensionState" id="ExtensionState"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">ExtensionState</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a347">347</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Check Extension Status</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+ExtensionState">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+ExtensionState</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			ExtensionState
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$exten</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$context</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$actionid</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$exten</span><span class="var-description">: Extension to check state on</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$context</span><span class="var-description">: Context for extension</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$actionid</span><span class="var-description">: message matching variable</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodGetVar" id="GetVar"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">GetVar</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a363">363</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets a Channel Variable</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+variables">http://www.voip-info.org/wiki-Asterisk+variables</a></li>
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+GetVar">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+GetVar</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			GetVar
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$variable</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$actionid</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$channel</span><span class="var-description">: Channel to read variable from</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$variable</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$actionid</span><span class="var-description">: message matching variable</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodHangup" id="Hangup"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">Hangup</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a376">376</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Hangup Channel</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+Hangup">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+Hangup</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			Hangup
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$channel</span><span class="var-description">: The channel name to be hungup</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodIAXPeers" id="IAXPeers"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">IAXPeers</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a386">386</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">List IAX Peers</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+IAXpeers">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+IAXpeers</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			IAXPeers
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodListCommands" id="ListCommands"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">ListCommands</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a397">397</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">List available manager commands</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+ListCommands">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+ListCommands</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			ListCommands
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$actionid</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$actionid</span><span class="var-description">: message matching variable</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodlog" id="log"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">log</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a737">737</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			log
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$message</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$level</span> = <span class="var-default">1</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$message</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$level</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodLogoff" id="Logoff"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">Logoff</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a410">410</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Logoff Manager</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+Logoff">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+Logoff</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			Logoff
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodMailboxCount" id="MailboxCount"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">MailboxCount</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a428">428</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Check Mailbox Message Count</p>
+<p class="description"><p>Returns number of new and old messages.    Message: Mailbox Message Count    Mailbox: &lt;mailboxid&gt;    NewMessages: &lt;count&gt;    OldMessages: &lt;count&gt;</p></p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+MailboxCount">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+MailboxCount</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			MailboxCount
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$mailbox</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$actionid</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$mailbox</span><span class="var-description">: Full mailbox ID &lt;mailbox&gt;@&lt;vm-context&gt;</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$actionid</span><span class="var-description">: message matching variable</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodMailboxStatus" id="MailboxStatus"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">MailboxStatus</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a447">447</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Check Mailbox</p>
+<p class="description"><p>Returns number of messages.    Message: Mailbox Status    Mailbox: &lt;mailboxid&gt;    Waiting: &lt;count&gt;</p></p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+MailboxStatus">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+MailboxStatus</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			MailboxStatus
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$mailbox</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$actionid</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$mailbox</span><span class="var-description">: Full mailbox ID &lt;mailbox&gt;@&lt;vm-context&gt;</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$actionid</span><span class="var-description">: message matching variable</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodMonitor" id="Monitor"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">Monitor</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a463">463</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Monitor a channel</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+Monitor">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+Monitor</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			Monitor
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">NULL</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$mix</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$channel</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$file</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$mix</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodOriginate" id="Originate"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">Originate</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a489">489</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Originate Call</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+Originate">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+Originate</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			Originate
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$exten</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$context</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$priority</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$application</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$data</span> = <span class="var-default">NULL</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$timeout</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$callerid</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$variable</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$account</span> = <span class="var-default">NULL</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$async</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$actionid</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$channel</span><span class="var-description">: Channel name to call</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$exten</span><span class="var-description">: Extension to use (requires 'Context' and 'Priority')</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$context</span><span class="var-description">: Context to use (requires 'Exten' and 'Priority')</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$priority</span><span class="var-description">: Priority to use (requires 'Exten' and 'Context')</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$application</span><span class="var-description">: Application to use</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$data</span><span class="var-description">: Data to use (requires 'Application')</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$timeout</span><span class="var-description">: How long to wait for call to be answered (in ms)</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$callerid</span><span class="var-description">: Caller ID to be set on the outgoing channel</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$variable</span><span class="var-description">: Channel variable to set (VAR1=value1|VAR2=value2)</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$account</span><span class="var-description">: Account code</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$async</span><span class="var-description">: true fast origination</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$actionid</span><span class="var-description">: message matching variable</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodParkedCalls" id="ParkedCalls"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">ParkedCalls</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a519">519</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">List parked calls</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+ParkedCalls">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+ParkedCalls</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			ParkedCalls
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$actionid</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$actionid</span><span class="var-description">: message matching variable</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodPing" id="Ping"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">Ping</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a532">532</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Ping</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+Ping">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+Ping</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			Ping
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodprocess_event" id="process_event"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/PrivateMethod.png" />
+		<span class="method-title">process_event</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a804">804</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Process event</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> result of event handler or false if no handler was found</li>
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			process_event
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$parameters</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$parameters</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodQueueAdd" id="QueueAdd"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">QueueAdd</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a545">545</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Queue Add</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+QueueAdd">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+QueueAdd</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			QueueAdd
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$queue</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$interface</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$penalty</span> = <span class="var-default">0</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$queue</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$interface</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$penalty</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodQueueRemove" id="QueueRemove"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">QueueRemove</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a559">559</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Queue Remove</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+QueueRemove">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+QueueRemove</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			QueueRemove
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$queue</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$interface</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$queue</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$interface</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodQueues" id="Queues"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">Queues</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a569">569</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Queues</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+Queues">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+Queues</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			Queues
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodQueueStatus" id="QueueStatus"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">QueueStatus</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a580">580</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Queue Status</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+QueueStatus">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+QueueStatus</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			QueueStatus
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$actionid</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$actionid</span><span class="var-description">: message matching variable</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodRedirect" id="Redirect"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">Redirect</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a598">598</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Redirect</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+Redirect">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+Redirect</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			Redirect
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$extrachannel</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$exten</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$context</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$priority</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$channel</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$extrachannel</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$exten</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$context</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$priority</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsend_request" id="send_request"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">send_request</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a131">131</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Send a request</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> of parameters</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			send_request
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$action</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$parameters</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$action</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$parameters</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodSetCDRUserField" id="SetCDRUserField"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">SetCDRUserField</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a612">612</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the CDR UserField</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+SetCDRUserField">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+SetCDRUserField</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			SetCDRUserField
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$userfield</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$append</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$userfield</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$channel</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$append</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodSetVar" id="SetVar"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">SetVar</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a627">627</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set Channel Variable</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+SetVar">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+SetVar</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			SetVar
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$variable</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$channel</span><span class="var-description">: Channel to set variable for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$variable</span><span class="var-description">: name</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodStatus" id="Status"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">Status</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a639">639</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Channel Status</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+Status">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+Status</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			Status
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$actionid</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$channel</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$actionid</span><span class="var-description">: message matching variable</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodStopMonitor" id="StopMonitor"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">StopMonitor</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a652">652</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Stop monitoring a channel</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+StopMonitor">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+StopMonitor</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			StopMonitor
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$channel</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodwait_response" id="wait_response"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">wait_response</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a150">150</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Wait for a response</p>
+<p class="description"><p>If a request was just sent, this will return the response.  Otherwise, it will loop forever, handling events.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> of parameters, empty on timeout</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			wait_response
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$allow_timeout</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$allow_timeout</span><span class="var-description">: if the socket times out, return an empty array</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodZapDialOffhook" id="ZapDialOffhook"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">ZapDialOffhook</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a664">664</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Dial over Zap channel while offhook</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+ZapDialOffhook">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+ZapDialOffhook</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			ZapDialOffhook
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$zapchannel</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$number</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$zapchannel</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$number</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodZapDNDoff" id="ZapDNDoff"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">ZapDNDoff</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a675">675</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Toggle Zap channel Do Not Disturb status OFF</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+ZapDNDoff">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+ZapDNDoff</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			ZapDNDoff
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$zapchannel</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$zapchannel</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodZapDNDon" id="ZapDNDon"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">ZapDNDon</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a686">686</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Toggle Zap channel Do Not Disturb status ON</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+ZapDNDon">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+ZapDNDon</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			ZapDNDon
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$zapchannel</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$zapchannel</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodZapHangup" id="ZapHangup"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">ZapHangup</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a697">697</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Hangup Zap Channel</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+ZapHangup">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+ZapHangup</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			ZapHangup
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$zapchannel</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$zapchannel</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodZapShowChannels" id="ZapShowChannels"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">ZapShowChannels</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a719">719</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Zap Show Channels</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+ZapShowChannels">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+ZapShowChannels</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			ZapShowChannels
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$actionid</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$actionid</span><span class="var-description">: message matching variable</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodZapTransfer" id="ZapTransfer"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">ZapTransfer</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi-asmanager.php.html#a708">708</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Transfer Zap Channel</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+ZapTransfer">http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+ZapTransfer</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			ZapTransfer
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$zapchannel</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$zapchannel</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Thu, 30 Sep 2010 02:21:47 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

@@ -1,0 +1,96 @@
+phpagi:  an AGI class written in PHP
+
+  Matthew Asham <matthew@ochrelabs.com>
+  http://phpagi.sourceforge.net
+
+Contributions by:
+  Florian Overkamp <florian@speakup.nl>
+  David Eder <david@eder.us>
+  Roland Hu
+  Others 
+
+OVERVIEW
+--------
+
+Include it:
+
+require 'phpagi.php';
+
+Construct it:
+
+$agi = new AGI();
+
+This creates a new AGI object with all the agi vars read in, you're now ready
+to rock and roll.
+
+Answer the line.
+
+$agi->answer();
+
+Play a file.
+
+$agi->stream_file('somefile.gsm');
+
+Record a file.
+
+$agi->record_file($file, $format, $escape_digits='', $timeout=-1, $beep=false, $silence=NULL)
+
+There's more, read the class or refer to the PHPAGI website for more information.  
+
+                     This README is seriousley lacking.
+
+CONFIGURATION
+-------------
+
+phpagi supports an ini style configuration file, and run time configuration.
+
+By default the class reads in the contents of /etc/asterisk/phpagi.conf into
+$this->config.  The format of the ini file is as follows:
+
+[examplesection]
+foo=bar
+bar=dew
+dew=pale ale
+
+This is read into $this->config as:
+
+$this->config['examplesection']['foo']='bar';
+$this->config['examplesection']['bar]='dew';
+$this->config['examplesection']['dew']='pale ale';
+
+
+Run time configuration is also supported.  Pass an array of variables and values as the
+second parameter to the AGI constructor, these fields are stored in $this->config['phpagi'].
+
+ie:
+
+$myconfig=array(
+	"error_handler"="true"
+);
+
+	$agi=new AGI("/etc/asterisk/phpagi.conf",$myconfig);
+
+
+The following run-time configuration options are used by the phpagi class to change behaviour.  They 
+are all contained in the $this->config['phpagi'] array.
+
+ * error_handler - set to "true" (string) to enable php debugging
+ 
+	
+EXAMPLE APPLICATION
+-------------------
+
+ping.php is an example phpagi application.  it asks for an IP address to be
+entered, and reads back the results of a "ping" summary.
+
+to use it, you'll need festival installed.  see  http://www.voip-info.org/tiki-index.php?page=Asterisk+festival+installation 
+for all the groovy bits to get festival working with asterisk, then configure
+phpagi to use it too:
+
+in /etc/asterisk/phpagi.conf:
+
+[festival]
+text2wave=/usr/src/festival/bin/text2wave
+tempdir=/var/lib/asterisk/sounds/tmp/
+
+

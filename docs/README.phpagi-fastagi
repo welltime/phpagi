@@ -1,0 +1,46 @@
+First, in /etc/services, at this line:
+
+fastagi         4573/tcp                        # Asterisk AGI
+
+
+
+Second, create /etc/xnetd.d/fastagi with:
+
+# default: off
+# description: fastagi is a remote AGI interface
+service fastagi
+{
+        socket_type  = stream
+        user         = root
+        group        = nobody
+        server       = <path to phpagi-fastagi.php>
+        wait         = no
+        protocol     = tcp
+        bind         = 127.0.0.1
+        disable      = no
+}
+
+Make sure you set the path to the phpagi-fastagi.php script.  Set the user
+and group to a non-root user if none of your scripts need root access. You
+might consider using posix_setuid and friends to reduce privileges. Change
+the bind address to your outbound IP address or to 0.0.0.0 to allow anyone
+to connect. Be sure to read up about xinetd and take advantage of security
+features it provides.  Fast AGI doesn't provide authentification.  It's up
+to you to keep unwanted visitors from extracting information from your AGI
+implementation.
+
+
+Third, write your code.
+
+Take special notice of how fastagi.php works:
+
+	1. $fastagi is initialized as a new AGI.
+	2. The script determines which script was requested.
+	3. The script is called using
+	   reqire_once($fastagi->request['agi_request']).
+	4. Your script takes over.  You must not create a new AGI, but
+	   insead use the $fastagi instance that has already been created.
+
+In your dialplan:
+
+exten => 5551212, 1, Agi(agi://127.0.0.1/myscript.php)

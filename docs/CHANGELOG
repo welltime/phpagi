@@ -1,0 +1,181 @@
+----------
+CHANGES
+----------
+Sep 18, 2010 - Matthew Asham
+	* Add option_delim to AGI to specify application option delimiter
+        * Changed constructor method to __construct
+
+Sep 17, 2010 - Matthew Asham
+	* BACKWARDS COMPATABILITY WARNING:  renamed goto() method to setContext() to address PHP 5.3 reserved keyword.  tracker #3031708
+	* add get_fullvariable to AGI class
+        * add boolean flag to get_variable and get_fullvariable methods to
+  	  return only the value - tracker #1736629
+	* initialize $ret variable in say_punctuation
+	* add string parameter to noop
+	* fix escape issue in database_get
+	* make_folder now returns true or false depending on success
+	* update exec_setlanguage to use asterisk 1.6+ language
+
+May 19, 2010 - Roland Hu
+	* new methods: set_var(), set_global_var()
+	* dialplan bug (using pipe instead of comma) is fixed in exec_dial() and exec_goto()
+	* code formatting
+
+June 8, 2010 - Matthew Asham
+	* move to svn from cvs
+
+May 25, 2005 - David Eder
+	* Added fastpass support.
+
+May 18, 2005 - David Eder
+	* Added phpagi_1.php as a wrapper class for 1.12 compatibility.
+
+March 25, 2005 - David Eder
+	* Changed the way text2wave and swift are executed for better compatibility.
+	* Added caching to text2wav and swift.
+
+March 12, 2005 - David Eder
+	* fixed autohangup in phpagi-asmanager.php, renamed to set_autohangup.
+	* Added more documentation to phpagi-asmanager.php.
+	* Added weather example.
+
+March 4, 2005 - David Eder
+	* FastAGI via xinetd
+
+February 17, 2005 - David Eder
+	* Fixed bugs with error handler.
+
+February 16, 2005 - David Eder
+	* Added Cepstral swift TTS patch from C. Arbusti of Soluzioni Vocali ( http://soluzionivocali.it ).
+	* Extended swift TTS functionality.
+	* Moved tempdir from [festival] to [phpagi] so that it can be shared with other extensions.
+
+February 2, 2005 - David Eder
+	* More documentation.
+	* Reworked and reintegrated AGI_AsteriskManager class.
+
+January 21, 2005 - David Eder
+	* Added exec_dial($type, $identifier, $timeout=NULL, $options=NULL, $url=NULL).
+        * Added exec_goto($a, $b=NULL, $c=NULL).
+	* Fixed bugs in evaluate, better support of multiline and  closed input and output.
+	* Fixed bugs in config initialization.
+
+January 19, 2005 - David Eder
+        * SUMMARY:
+	*   Massive restructuring!
+        *   Updated to use more PHP internal functions.
+        *   Updated function arguments to represent their AGI function's arguments.
+        *   Functions now return a consistent result array.
+        *   Added phpdoc documentation.
+        *   Removed functions that can be done with internal PHP or AGI functions.
+        *   Enhanced error handler.
+	*
+	* Goals of changes:
+	*
+	* It is important for a language API to not wander too far from the general
+	* API. Functions that are named differently have been updated.  Function
+	* arguments that do not match the AGI API have been updated. Underscores
+	* have been substituted for spaces to make them compatible with PHP function
+	* names.  Optional arguments in AGI should remain optional if possible. Return
+	* values should be consistent.  Functions need to be better documented.
+	*
+	* Result:
+	*
+	* The return from most functions is now
+	*   array('code'=>$code, 'result'=>$result, 'data'=>$data)
+	* ['data'] still needs some work.
+	*
+	* removed class variables:
+	*   $response -  It was no longer used with the new return structure.
+	*
+	* removed functions:
+	*   agi_is_error($retarr) - It was no longer used with the new return
+	*     structure.  Each function has it's own result that must be evalutated
+	*     by the programmer, as the return values are often specific to the function.
+	*   agi_readresult($str=FALSE) - It was no longer used with the new return structure.
+	*   agi_response_code() - It was no longer used with the new return structure.
+	*   agi_response_result() - It was no longer used with the new return structure.
+	*   agi_response_data() - It was no longer used with the new return structure.
+	*   agi_response_var($var) - It was no longer used with the new return structure.
+	*   agi_response_is_error() - see agi_is_error
+	*   agi_read() - It was deprecated
+	*   con_print_r($arr,$label='',$lvl=0) - Use print_r($arr, true) in conjunction with conlog
+	*   agi_getdtmf($len,$timeout,$terminator=FALSE,$prompt=FALSE) - use get_data
+	*   agi_dtmf2text($len,$timeout,$terminator=FALSE,$prompt=FALSE) - use text_input
+	*   arr2str($arr) - use PHP function join
+	*   config_load($file) - use PHP function parse_ini_file
+	*   enum_lookup($telnumber,$rDNS="e164.org") - use exec_enumlookup
+	*   enum_txtlookup($telnumber,$rDNS="e164.org") - use exec_enumlookup
+	*
+	* added functions:
+	*   answer()
+	*   autohangup($time=0)
+	*   exec($application, $options)
+	*   get_data($filename, $timeout=NULL, $max_digits=NULL)
+	*   receive_char($timeout=-1)
+	*   say_phonetic($text, $escape_digits='')
+	*   set_context($context)
+	*   set_extension($extension)
+	*   set_priority($priority)
+	*   tdd_mode($setting)
+	*   wait_for_digit($timeout=-1)
+	*   database_deltree($family, $keytree='')
+	*   noop()
+	*   set_music($enabled=true, $class='')
+	*   exec_absolutetimeout($seconds=0)
+	*   exec_agi($command, $args)
+	*   exec_enumlookup($exten)
+	*   text_input($mode='NUMERIC')
+	*   say_punctuation($text, $escape_digits='', $frequency=8000)
+	*   which($cmd, $checkpath=NULL)
+	*   make_folder($folder, $perms=0755)
+	* updated functions:
+	*   agi_exec($str) -> evaluate($command) - exec is an AGI function
+	*   agi_verbose($str,$vbl=1) -> verbose($message, $level=1) - consistency with AGI
+	*   db_get($family,$key) -> database_get($family, $key) - consistency with AGI
+	*   db_put($family,$key,$val) -> database_put($family, $key, $value) - consistency with AGI
+	*   db_del($family,$key) -> database_del($family, $key) - consistency with AGI
+	*   get_var($var) -> get_variable($variable) - consistency with AGI
+	*   set_var($var,$val) -> set_variable($variable, $value) - consistency with AGI
+	*   agi_hangup() -> hangup($channel='') - consistency with AGI
+	*   agi_channel_status($channel) -> channel_status($channel='') - consistency with AGI
+	*   agi_recordfile($file,$format,$timeout=5000,$prompt=FALSE) -> record_file($file, $format, $escape_digits='', $timeout=-1, $beep=false, $silence=NULL) - consistency with AGI
+	*   agi_play($file) -> stream_file($filename, $escape_digits='', $offset=0) - consistency with AGI
+	*   agi_goto($con,$ext='s',$pri=1) -> goto($context, $extension='s', $priority=1) - consistency with AGI
+	*   agi_saydigits($digits) -> say_digits($digits, $escape_digits='') - consistency with AGI
+	*   agi_saynumber($number) -> say_number($number, $escape_digits='') - consistency with AGI
+	*   agi_saytime($time="") -> say_time($time=NULL, $escape_digits='') - consistency with AGI
+	*   agi_setlanguage($language="en") -> exec_setlanguage($language='en') - consistency with AGI
+	*   text2wav($text) -> text2wav($text, $escape_digits='', $frequency=8000) - consistency with AGI
+	*   phpagi_error_handler($errno, $errstr, $errfile, $errline) -> phpagi_error_handler($level, $message, $file, $line, $context) - I needed better error handling
+
+August 29, 2004 -
+	* Fixed db_get now returns a value
+	* Fixed db_put now stores a value
+	* Added enum_lookup, requires external "dig" utility.
+	* Tweak con_print_r now dumps arrays, displays variable type.
+	* Added enum_txtlookup, requires external "dig" utility".
+	* Added parse_callerid, thanks to http://www.sbuehl.com/projects/asterisk/asterisk-howto-3.html
+
+August 26, 2004 - 
+	* Added agi_verbose
+	* Added debug config-option to shut conlog up
+	* Added agi_saydigits, agi_saynumber, agi_saytime, agi_setlanguage
+
+April 8, 2004 - v1.5 internal
+    * Added agi_goto - David Croft
+    * Added this changelog (maintain it eh?) - Matthew Asham
+    * Added quote fixing to conlog - David Croft
+    * Added new parameter to AGI constructor, $configopt array - Matthew Asham
+    - Added phpagi_error_handler - David Croft
+    
+ 
+    
+March 20, 2004 - v1.5 
+	* Fixed buffering bugs - David Croft
+	* added demo app. - Matthew Asham
+	* misc stuff. - Matthew Asham
+
+November 2003 
+	* Initial version
+	

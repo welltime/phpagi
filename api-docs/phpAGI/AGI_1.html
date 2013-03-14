@@ -1,0 +1,1525 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class AGI_1</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> AGI_1</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Asterisk Manager class</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+config+manager.conf">http://www.voip-info.org/wiki-Asterisk+config+manager.conf</a></li>
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+manager+API">http://www.voip-info.org/wiki-Asterisk+manager+API</a></li>
+				<li><span class="field">example:</span> <a href="../__examplesource/exsource_ome_phpagi_devel_phpagi_examples_sip_show_peer.php_a884030dbf98b0261079f0d0ff35ab7b.html">Get information about a sip peer</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_phpagi_1.php.html">/phpagi_1.php</a> (line <span class="field"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a42">42</a></span>)
+		</p>
+		
+				
+		<pre><a href="../phpAGI/AGI.html">AGI</a>
+   |
+   --AGI_1</pre>
+	
+			</div>
+</div>
+
+
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																								<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">array</span>
+					<a href="#$response" title="details" class="var-name">$response</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																																																																																																																																								<div class="method-definition">
+					<img src="../media/images/Constructor.png" alt=" "/>
+											<span class="method-result">AGI_1</span>
+										<a href="#AGI_1" title="details" class="method-name">AGI_1</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$config</span> = <span class="var-default">false</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$optconfig</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">array,</span>
+										<a href="#agi_channel_status" title="details" class="method-name">agi_channel_status</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#agi_dtmf2text" title="details" class="method-name">agi_dtmf2text</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$len</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/PrivateMethod.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#agi_exec" title="details" class="method-name">agi_exec</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#agi_getdtmf" title="details" class="method-name">agi_getdtmf</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$len</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$timeout</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$terminator</span> = <span class="var-default">false</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$prompt</span> = <span class="var-default">false</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#agi_goto" title="details" class="method-name">agi_goto</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$con</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$ext</span> = <span class="var-default">'s'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$pri</span> = <span class="var-default">1</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#agi_hangup" title="details" class="method-name">agi_hangup</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#agi_is_error" title="details" class="method-name">agi_is_error</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$retarr</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#agi_play" title="details" class="method-name">agi_play</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#agi_readresult" title="details" class="method-name">agi_readresult</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#agi_recordfile" title="details" class="method-name">agi_recordfile</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$format</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$timeout</span> = <span class="var-default">5000</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$prompt</span> = <span class="var-default">FALSE</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer</span>
+										<a href="#agi_response_code" title="details" class="method-name">agi_response_code</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#agi_response_data" title="details" class="method-name">agi_response_data</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#agi_response_is_error" title="details" class="method-name">agi_response_is_error</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer</span>
+										<a href="#agi_response_result" title="details" class="method-name">agi_response_result</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">mixed</span>
+										<a href="#agi_response_var" title="details" class="method-name">agi_response_var</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$var</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#agi_saydigits" title="details" class="method-name">agi_saydigits</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$digits</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#agi_saynumber" title="details" class="method-name">agi_saynumber</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$number</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#agi_saytime" title="details" class="method-name">agi_saytime</a>
+											([<span class="var-type">integer</span>&nbsp;<span class="var-name">$time</span> = <span class="var-default">''</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#agi_setlanguage" title="details" class="method-name">agi_setlanguage</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$language</span> = <span class="var-default">'en'</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#agi_verbose" title="details" class="method-name">agi_verbose</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$vbl</span> = <span class="var-default">1</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#arr2str" title="details" class="method-name">arr2str</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$arr</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#con_print_r" title="details" class="method-name">con_print_r</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$arr</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$label</span> = <span class="var-default">''</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$lvl</span> = <span class="var-default">0</span>], <span class="var-type">integer</span>&nbsp;<span class="var-name">$vbl</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer</span>
+										<a href="#db_del" title="details" class="method-name">db_del</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$family</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#db_get" title="details" class="method-name">db_get</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$family</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer</span>
+										<a href="#db_put" title="details" class="method-name">db_put</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$family</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$val</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#enum_lookup" title="details" class="method-name">enum_lookup</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$telnumber</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$rDNS</span> = <span class="var-default">'e164.org'</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#enum_txtlookup" title="details" class="method-name">enum_txtlookup</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$telnumber</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$rDNS</span> = <span class="var-default">'e164.org'</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/PrivateMethod.png" alt=" "/>
+											<span class="method-result">array</span>
+										<a href="#evalutate" title="details" class="method-name">evalutate</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$command</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#get_var" title="details" class="method-name">get_var</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$var</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#send_image" title="details" class="method-name">send_image</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$image</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#send_text" title="details" class="method-name">send_text</a>
+											(<span class="var-type">$text</span>&nbsp;<span class="var-name">$txt</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">integer</span>
+										<a href="#set_var" title="details" class="method-name">set_var</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$var</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$val</span>)
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$response" id="$response"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$response</span>
+						(line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a52">52</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Response structure</p>
+<p class="description"><p>array('code'=&gt;$code, 'result'=&gt;$result, 'data'=&gt;$data)</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../phpAGI/AGI.html">AGI</a></span></p>
+					<blockquote>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../phpAGI/AGI.html#var$asmanager">AGI::$asmanager</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../phpAGI/AGI.html#var$audio">AGI::$audio</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../phpAGI/AGI.html#var$config">AGI::$config</a></span><br>
+							</span>
+													<img src="../media/images/PrivateVariable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../phpAGI/AGI.html#var$in">AGI::$in</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../phpAGI/AGI.html#var$option_delim">AGI::$option_delim</a></span><br>
+							</span>
+													<img src="../media/images/PrivateVariable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../phpAGI/AGI.html#var$out">AGI::$out</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="var-title">
+								<span class="var-name"><a href="../phpAGI/AGI.html#var$request">AGI::$request</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodAGI_1" id="AGI_1"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Constructor.png" />
+		<span class="method-title">Constructor AGI_1</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a60">60</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructor</p>
+	
+	<div class="method-signature">
+		<span class="method-result">AGI_1</span>
+		<span class="method-name">
+			AGI_1
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$config</span> = <span class="var-default">false</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$optconfig</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$config</span><span class="var-description">: is the name of the config file to parse</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$optconfig</span><span class="var-description">: is an array of configuration vars and vals, stuffed into $this-&gt;config['phpagi']</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodagi_channel_status" id="agi_channel_status"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">agi_channel_status</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a444">444</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the status of the specified channel.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> ('status'=&gt;$res['result'], 'description'=&gt;$res['data'])</li>
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-channel+status">http://www.voip-info.org/wiki-channel+status</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array,</span>
+		<span class="method-name">
+			agi_channel_status
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$channel</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodagi_dtmf2text" id="agi_dtmf2text"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">agi_dtmf2text</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a293">293</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Read $len characters as DTMF codes</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			agi_dtmf2text
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$len</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$len</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodagi_exec" id="agi_exec"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/PrivateMethod.png" />
+		<span class="method-title">agi_exec</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a87">87</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Execute an AGI command</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> ('code'=&gt;$code, 'result'=&gt;$result, 'data'=&gt;$data)</li>
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			agi_exec
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$str</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodagi_getdtmf" id="agi_getdtmf"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">agi_getdtmf</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a248">248</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Plays the given file and receives DTMF data.</p>
+<p class="description"><p>This is similar to STREAM FILE, but this command can accept and return many DTMF digits,  while STREAM FILE returns immediately after the first DTMF digit is detected.</p><p>Asterisk looks for the file to play in /var/lib/asterisk/sounds by default.</p><p>If the user doesn't press any keys when the message plays, there is $timeout milliseconds  of silence then the command ends.</p><p>The user has the opportunity to press a key at any time during the message or the  post-message silence. If the user presses a key while the message is playing, the  message stops playing. When the first key is pressed a timer starts counting for  $timeout milliseconds. Every time the user presses another key the timer is restarted.  The command ends when the counter goes to zero or the maximum number of digits is entered,  whichever happens first.</p><p>Pressing the # key has the same effect as the timer running out: the command ends and  any previously keyed digits are returned. A side effect of this is that there is no  way to read a # key using this command.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> of characters</li>
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-get+data">http://www.voip-info.org/wiki-get+data</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			agi_getdtmf
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$len</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$timeout</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$terminator</span> = <span class="var-default">false</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$prompt</span> = <span class="var-default">false</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$len</span><span class="var-description">: number of digits to read</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$timeout</span><span class="var-description">: milliseconds</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$terminator</span><span class="var-description">: character on which to quit</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$prompt</span><span class="var-description">: file to play. Do not include file extension.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodagi_goto" id="agi_goto"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">agi_goto</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a486">486</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Goto - Set context, extension and priority</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			agi_goto
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$con</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$ext</span> = <span class="var-default">'s'</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$pri</span> = <span class="var-default">1</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$con</span><span class="var-description">: context</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$ext</span><span class="var-description">: extension</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$pri</span><span class="var-description">: priority</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodagi_hangup" id="agi_hangup"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">agi_hangup</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a432">432</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Hangup the current channel.</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-hangup">http://www.voip-info.org/wiki-hangup</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			agi_hangup
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$channel</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$channel</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodagi_is_error" id="agi_is_error"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">agi_is_error</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a98">98</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Check for error in result structure</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true on error</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			agi_is_error
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$retarr</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$retarr</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodagi_play" id="agi_play"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">agi_play</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a474">474</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Play the given audio file, allowing playback to be interrupted by a #. This command is similar to the GET DATA  command but this command returns after the first DTMF digit has been pressed while GET DATA can accumulated any number of  digits before returning.</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-stream+file">http://www.voip-info.org/wiki-stream+file</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			agi_play
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$file</span><span class="var-description">: filename without extension, often in /var/lib/asterisk/sounds</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodagi_readresult" id="agi_readresult"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">agi_readresult</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a125">125</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Read the result from Asterisk</p>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			agi_readresult
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodagi_recordfile" id="agi_recordfile"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">agi_recordfile</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a460">460</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Record sound to a file until an acceptable DTMF digit is received or a specified amount of  time has passed. Optionally the file BEEP is played before recording begins.</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-record+file">http://www.voip-info.org/wiki-record+file</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			agi_recordfile
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$format</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$timeout</span> = <span class="var-default">5000</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$prompt</span> = <span class="var-default">FALSE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$file</span><span class="var-description">: to record, without extension, often created in /var/lib/asterisk/sounds</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: of the file. GSM and WAV are commonly used formats. MP3 is read-only and thus cannot be used.</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$timeout</span><span class="var-description">: is the maximum record time in milliseconds, or -1 for no timeout.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$prompt</span><span class="var-description">: to play</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodagi_response_code" id="agi_response_code"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">agi_response_code</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a154">154</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the response code from the last command</p>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			agi_response_code
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodagi_response_data" id="agi_response_data"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">agi_response_data</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a175">175</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the response data from the last command</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			agi_response_data
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodagi_response_is_error" id="agi_response_is_error"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">agi_response_is_error</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a198">198</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Check for error in response</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true on error</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			agi_response_is_error
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodagi_response_result" id="agi_response_result"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">agi_response_result</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a164">164</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the result code from the last command</p>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			agi_response_result
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodagi_response_var" id="agi_response_var"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">agi_response_var</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a186">186</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get the response variable from the last command</p>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			agi_response_var
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$var</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$var</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodagi_saydigits" id="agi_saydigits"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">agi_saydigits</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a497">497</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Say the given digit string, returning early if # is received on the channel.</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-say+digits">http://www.voip-info.org/wiki-say+digits</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			agi_saydigits
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$digits</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$digits</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodagi_saynumber" id="agi_saynumber"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">agi_saynumber</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a508">508</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Say the given number, returning early if # is received on the channel.</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-say+number">http://www.voip-info.org/wiki-say+number</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			agi_saynumber
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$number</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$number</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodagi_saytime" id="agi_saytime"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">agi_saytime</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a519">519</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Say a given time, returning early if # is received on the channel.</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-say+time">http://www.voip-info.org/wiki-say+time</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			agi_saytime
+		</span>
+					([<span class="var-type">integer</span>&nbsp;<span class="var-name">$time</span> = <span class="var-default">''</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$time</span><span class="var-description">: number of seconds elapsed since 00:00:00 on January 1, 1970, Coordinated Universal Time (UTC).</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodagi_setlanguage" id="agi_setlanguage"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">agi_setlanguage</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a530">530</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set Language</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			agi_setlanguage
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$language</span> = <span class="var-default">'en'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$language</span><span class="var-description">: code</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodagi_verbose" id="agi_verbose"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">agi_verbose</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a144">144</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sends $message to the Asterisk console via the 'verbose' message system.</p>
+<p class="description"><p>If the Asterisk verbosity level is $vbl or greater, send $str to the console.</p><p>The Asterisk verbosity system works as follows. The Asterisk user gets to set the desired verbosity at startup time or later  using the console 'set verbose' command. Messages are displayed on the console if their verbose level is less than or equal  to desired verbosity set by the user. More important messages should have a low verbose level; less important messages  should have a high verbose level.</p></p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-verbose">http://www.voip-info.org/wiki-verbose</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			agi_verbose
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$vbl</span> = <span class="var-default">1</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$str</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$vbl</span><span class="var-description">: from 1 to 4</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodarr2str" id="arr2str"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">arr2str</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a342">342</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Alias of PHP join function</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			arr2str
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$arr</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$arr</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcon_print_r" id="con_print_r"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">con_print_r</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a210">210</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Log to console if debug mode</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			con_print_r
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$arr</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$label</span> = <span class="var-default">''</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$lvl</span> = <span class="var-default">0</span>], <span class="var-type">integer</span>&nbsp;<span class="var-name">$vbl</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$arr</span><span class="var-description">: to print</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$label</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$vbl</span><span class="var-description">: verbose level</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$lvl</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddb_del" id="db_del"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">db_del</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a384">384</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Deletes an entry in the Asterisk database for a given family and key.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> result code</li>
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-database+del">http://www.voip-info.org/wiki-database+del</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			db_del
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$family</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$family</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$key</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddb_get" id="db_get"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">db_get</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a355">355</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieves an entry in the Asterisk database for a given family and key.</p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-database+get">http://www.voip-info.org/wiki-database+get</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			db_get
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$family</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$family</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$key</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddb_put" id="db_put"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">db_put</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a370">370</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds or updates an entry in the Asterisk database for a given family, key, and value.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> result code</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			db_put
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$family</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$val</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$family</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$key</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$val</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodenum_lookup" id="enum_lookup"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">enum_lookup</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a542">542</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Perform enum lookup</p>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			enum_lookup
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$telnumber</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$rDNS</span> = <span class="var-default">'e164.org'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$telnumber</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$rDNS</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodenum_txtlookup" id="enum_txtlookup"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">enum_txtlookup</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a594">594</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Perform enum txt lookup</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			enum_txtlookup
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$telnumber</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$rDNS</span> = <span class="var-default">'e164.org'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$telnumber</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$rDNS</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodevalutate" id="evalutate"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/PrivateMethod.png" />
+		<span class="method-title">evalutate</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a74">74</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Evaluate an AGI command</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> ('code'=&gt;$code, 'result'=&gt;$result, 'data'=&gt;$data)</li>
+				<li><span class="field">access:</span> private</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			evalutate
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$command</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$command</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodget_var" id="get_var"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">get_var</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a400">400</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Fetch the value of a variable.</p>
+<p class="description"><p>Does not work with global variables. Does not work with some variables that are generated by modules.</p></p>
+	<ul class="tags">
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-Asterisk+variables">http://www.voip-info.org/wiki-Asterisk+variables</a></li>
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-get+variable">http://www.voip-info.org/wiki-get+variable</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			get_var
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$var</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$var</span><span class="var-description">: variable name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsend_image" id="send_image"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">send_image</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a649">649</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Send the specified image on a channel.</p>
+<p class="description"><p>Most channels do not support the transmission of images.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true on success</li>
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-send+image">http://www.voip-info.org/wiki-send+image</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			send_image
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$image</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$image</span><span class="var-description">: without extension, often in /var/lib/asterisk/images</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../phpAGI/AGI.html#methodsend_image">AGI::send_image()</a></dt>
+						<dd>Send the specified image on a channel.</dd>
+					</dl>
+			
+	</div>
+<a name="methodsend_text" id="send_text"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">send_text</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a633">633</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Send the given text to the connected channel.</p>
+<p class="description"><p>Most channels do not support transmission of text.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> true on success</li>
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-send+text">http://www.voip-info.org/wiki-send+text</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			send_text
+		</span>
+					(<span class="var-type">$text</span>&nbsp;<span class="var-name">$txt</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">$text</span>
+				<span class="var-name">$txt</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../phpAGI/AGI.html#methodsend_text">AGI::send_text()</a></dt>
+						<dd>Send the given text to the connected channel.</dd>
+					</dl>
+			
+	</div>
+<a name="methodset_var" id="set_var"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">set_var</span> (line <span class="line-number"><a href="../__filesource/fsource_phpAGI__phpagi_1.php.html#a420">420</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets a variable to the specified value. The variables so created can later be used by later using ${&lt;variablename&gt;}  in the dialplan.</p>
+<p class="description"><p>These variables live in the channel Asterisk creates when you pickup a phone and as such they are both local and temporary.  Variables created in one channel can not be accessed by another channel. When you hang up the phone, the channel is deleted  and any variables in that channel are deleted as well.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> result code</li>
+				<li><span class="field">link:</span> <a href="http://www.voip-info.org/wiki-set+variable">http://www.voip-info.org/wiki-set+variable</a></li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			set_var
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$var</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$val</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$var</span><span class="var-description">: is case sensitive</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$val</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../phpAGI/AGI.html#methodset_var">AGI::set_var()</a></dt>
+						<dd>Sets a variable, using Asterisk 1.6 syntax.</dd>
+					</dl>
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../phpAGI/AGI.html">AGI</a></span></p>
+					<blockquote>
+													<img src="../media/images/Constructor.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#method__construct">AGI::__construct()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodanswer">AGI::answer()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodchannel_status">AGI::channel_status()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodconlog">AGI::conlog()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methoddatabase_del">AGI::database_del()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methoddatabase_deltree">AGI::database_deltree()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methoddatabase_get">AGI::database_get()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methoddatabase_put">AGI::database_put()</a></span><br>
+													<img src="../media/images/PrivateMethod.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodevaluate">AGI::evaluate()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodexec">AGI::exec()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodexec_absolutetimeout">AGI::exec_absolutetimeout()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodexec_agi">AGI::exec_agi()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodexec_dial">AGI::exec_dial()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodexec_enumlookup">AGI::exec_enumlookup()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodexec_goto">AGI::exec_goto()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodexec_setlanguage">AGI::exec_setlanguage()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodfastpass_get_data">AGI::fastpass_get_data()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodfastpass_say_digits">AGI::fastpass_say_digits()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodfastpass_say_number">AGI::fastpass_say_number()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodfastpass_say_phonetic">AGI::fastpass_say_phonetic()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodfastpass_say_punctuation">AGI::fastpass_say_punctuation()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodfastpass_say_time">AGI::fastpass_say_time()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodfastpass_stream_file">AGI::fastpass_stream_file()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodfastpass_swift">AGI::fastpass_swift()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodfastpass_text2wav">AGI::fastpass_text2wav()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodget_data">AGI::get_data()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodget_fullvariable">AGI::get_fullvariable()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodget_variable">AGI::get_variable()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodhangup">AGI::hangup()</a></span><br>
+													<img src="../media/images/PrivateMethod.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodmake_folder">AGI::make_folder()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodmenu">AGI::menu()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodnew_AsteriskManager">AGI::new_AsteriskManager()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodnoop">AGI::noop()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodparse_callerid">AGI::parse_callerid()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodreceive_char">AGI::receive_char()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodrecord_file">AGI::record_file()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodsay_digits">AGI::say_digits()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodsay_number">AGI::say_number()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodsay_phonetic">AGI::say_phonetic()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodsay_punctuation">AGI::say_punctuation()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodsay_time">AGI::say_time()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodsend_image">AGI::send_image()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodsend_text">AGI::send_text()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodsetContext">AGI::setContext()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodset_autohangup">AGI::set_autohangup()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodset_callerid">AGI::set_callerid()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodset_context">AGI::set_context()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodset_extension">AGI::set_extension()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodset_global_var">AGI::set_global_var()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodset_music">AGI::set_music()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodset_priority">AGI::set_priority()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodset_var">AGI::set_var()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodset_variable">AGI::set_variable()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodstream_file">AGI::stream_file()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodswift">AGI::swift()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodtdd_mode">AGI::tdd_mode()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodtext2wav">AGI::text2wav()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodtext_input">AGI::text_input()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodverbose">AGI::verbose()</a></span><br>
+													<img src="../media/images/Method.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodwait_for_digit">AGI::wait_for_digit()</a></span><br>
+													<img src="../media/images/PrivateMethod.png" alt=" "/>
+							<span class="method-name"><a href="../phpAGI/AGI.html#methodwhich">AGI::which()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	
+	<p class="notes" id="credit">
+		Documentation generated on Thu, 30 Sep 2010 02:22:07 -0700 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.2</a>
+	</p>
+	</div></body>
+</html>

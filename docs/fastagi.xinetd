@@ -1,0 +1,14 @@
+# default: off
+# description: fastagi is a remote AGI interface
+service fastagi
+{
+        socket_type  = stream
+        user         = root
+        group        = nobody
+        server       = /var/lib/asterisk/agi-bin/phpagi/phpagi-fastagi.php
+        wait         = no
+        protocol     = tcp
+        bind         = 127.0.0.1
+        disable      = no
+}
+
