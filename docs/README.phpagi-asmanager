@@ -1,7 +1,11 @@
 phpagi-asmanager:  an Asterisk Manager class written in PHP
 
   Matthew Asham <matthewa@bcwireless.net>
-  http://phpagi.sourceforge.net
+  https://github.com/welltime/phpagi
+  
+  Original version:
+  http://phpagi.sourceforge.net/
+  
 ------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------

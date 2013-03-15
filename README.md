@@ -1,6 +1,5 @@
 PHPAGI README
- $Id: README,v 1.4 2005/05/19 13:19:37 pinhole Exp $
----------------------------------------
+-------------
 
 Welcome to PHPAGI. 
 
@@ -22,31 +21,27 @@ application on our website.
 
 FILES
 -----
- phpagi.php           - The main phpagi class.
- phpagi-asmanager.php - The Asterisk Manager class.
- phpagi-fastagi.php   - FastAGI class.
- phpagi_1.php         - Compatability class for 1.12 release
+* phpagi.php           - The main phpagi class.
+* phpagi-asmanager.php - The Asterisk Manager class.
+* phpagi-fastagi.php   - FastAGI class.
 
- docs/                - README files for the classes.
- api-docs/            - API Documentation (html)
+* docs/                - README files for the classes.
+* api-docs/            - API Documentation (html)
 
 DOCS
 ----
- README.phpagi           - The main phpagi README
- README.phpagi-asmanager - The phpagi asterisk manager README
- README.phpagi-fastagi   - phpagi fastagi README
- 
- CHANGELOG               - Change Log.
+* README.phpagi           - The main phpagi README
+* README.phpagi-asmanager - The phpagi asterisk manager README
+* README.phpagi-fastagi   - phpagi fastagi README
+* CHANGELOG               - Change Log.
 
- phpagi.conf             - An example configuration file for phpagi.
- fastagi.xinetd          - xinetd.conf sample configuration for fastagi
-
+* phpagi.conf             - An example configuration file for phpagi.
+* fastagi.xinetd          - xinetd.conf sample configuration for fastagi
 
 SUPPORT
 -------
 
 Support for phpagi is available from the project website. 
 
- * http://phpagi.sourceforge.net
- * http://sourceforge.net/projects/phpagi/
+ * https://github.com/welltime/phpagi
 

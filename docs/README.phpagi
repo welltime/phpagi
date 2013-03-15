@@ -1,7 +1,10 @@
 phpagi:  an AGI class written in PHP
 
-  Matthew Asham <matthew@ochrelabs.com>
-  http://phpagi.sourceforge.net
+  Matthew Asham <matthew@ochrelabs.com> 
+  https://github.com/welltime/phpagi
+
+Original version:
+  http://phpagi.sourceforge.net/
 
 Contributions by:
   Florian Overkamp <florian@speakup.nl>
