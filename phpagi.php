@@ -2,8 +2,9 @@
 
 /**
 * phpagi.php : PHP AGI Functions for Asterisk
-* Website: http://phpagi.sourceforge.net/
-*
+* @see https://github.com/welltime/phpagi
+* @filesource http://phpagi.sourceforge.net/
+* 
 * $Id: phpagi.php,v 2.20 2010/09/30 02:21:00 masham Exp $
 *
 * Copyright (c) 2003 - 2010 Matthew Asham <matthew@ochrelabs.com>, David Eder <david@eder.us> and others
@@ -18,8 +19,7 @@
 *
 * Written for PHP 4.3.4, should work with older PHP 4.x versions.
 *
-* Please submit bug reports, patches, etc to http://sourceforge.net/projects/phpagi/
-* Gracias. :)
+* Please submit bug reports, patches, etc to https://github.com/welltime/phpagi
 *
 *
 * @package phpAGI

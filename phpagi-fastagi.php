@@ -2,7 +2,8 @@
 <?php
  /**
   * phpagi-fastagi.php : PHP FastAGI bootstrap
-  * Website: http://phpagi.sourceforge.net
+  * @see https://github.com/welltime/phpagi
+  * @filesource http://phpagi.sourceforge.net/
   *
   * $Id: phpagi-fastagi.php,v 1.2 2005/05/25 18:43:48 pinhole Exp $
   *
@@ -22,8 +23,7 @@
 
  /**
   * Written for PHP 4.3.4, should work with older PHP 4.x versions.
-  * Please submit bug reports, patches, etc to http://sourceforge.net/projects/phpagi/
-  * Gracias. :)
+  * Please submit bug reports, patches, etc to https://github.com/welltime/phpagi
   *
   */
 
