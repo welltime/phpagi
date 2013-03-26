@@ -132,7 +132,28 @@
     {
       $req = "Action: $action\r\n";
       foreach($parameters as $var=>$val)
-        $req .= "$var: $val\r\n";
+      { 
+        if ($var == "ActionID")
+        {
+          $actionid = $val;
+        }
+        if (is_array($val))
+        {	
+          foreach ($val as $l)
+          {
+            $req .= "$var: $l\r\n";
+          }
+        }
+        else
+        {
+          $req .= "$var: $val\r\n";
+        }
+      }
+      if (!$actionid)
+      {
+      	$actionid = $this->ActionID();
+      	$req .= "ActionID: $actionid\r\n";
+      }  
       $req .= "\r\n";
       fwrite($this->socket, $req);
       return $this->wait_response();
