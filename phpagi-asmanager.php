@@ -132,7 +132,15 @@
     {
       $req = "Action: $action\r\n";
       foreach($parameters as $var=>$val)
-        $req .= "$var: $val\r\n";
+      {
+        // Модификация. Передача нескольких параметров
+        if (is_array($val))
+          foreach ($val as $l){
+            $req .= "$var: $l\r\n";
+          }
+        else
+          $req .= "$var: $val\r\n";
+      }
       $req .= "\r\n";
       fwrite($this->socket, $req);
       return $this->wait_response();
