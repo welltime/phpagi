@@ -95,7 +95,7 @@
      * @var boolean
      */
     private $_logged_in = FALSE;
-    
+
    /**
     * Constructor
     *
@@ -119,6 +119,7 @@
       if(!isset($this->config['asmanager']['port'])) $this->config['asmanager']['port'] = 5038;
       if(!isset($this->config['asmanager']['username'])) $this->config['asmanager']['username'] = 'phpagi';
       if(!isset($this->config['asmanager']['secret'])) $this->config['asmanager']['secret'] = 'phpagi';
+      if(!isset($this->config['asmanager']['write_log'])) $this->config['asmanager']['write_log'] = false;
     }
 
    /**
@@ -776,7 +777,7 @@
     {
       if($this->pagi != false)
         $this->pagi->conlog($message, $level);
-      else
+      elseif($this->config['asmanager']['write_log'])
         error_log(date('r') . ' - ' . $message);
     }
 
