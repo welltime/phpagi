@@ -344,6 +344,36 @@
       return $this->send_request('Events', array('EventMask'=>$eventmask));
     }
 
+    /**
+    *  Generate random ActionID
+    **/
+    function ActionID()
+    {
+      return "A".sprintf(rand(),"%6d");
+    }
+
+    /**
+    *
+    *  DBGet
+    *  http://www.voip-info.org/wiki/index.php?page=Asterisk+Manager+API+Action+DBGet
+    *  @param string $family key family
+    *  @param string $key key name
+    **/
+    function DBGet($family, $key, $actionid = NULL)
+    {
+      $parameters = array('Family'=>$family, 'Key'=>$key);
+      if($actionid == NULL)
+        $actionid = $this->ActionID();
+      $parameters['ActionID'] = $actionid;
+      $response = $this->send_request("DBGet", $parameters);
+      if($response['Response'] == "Success")
+      {
+        $response = $this->wait_response(false, $actionid);
+        return $response['Val'];
+      }
+      return "";
+    }
+
    /**
     * Check Extension Status
     *
@@ -453,7 +483,7 @@
     * @param string $actionid message matching variable
     */
     function MailboxStatus($mailbox, $actionid=NULL)
-    {	
+    {
       $parameters = array('Mailbox'=>$mailbox);
       if($actionid) $parameters['ActionID'] = $actionid;
       return $this->send_request('MailboxStatus', $parameters);
@@ -516,7 +546,7 @@
       if($actionid) $parameters['ActionID'] = $actionid;
 
       return $this->send_request('Originate', $parameters);
-    }	
+    }
 
    /**
     * List parked calls
@@ -801,6 +831,24 @@
       $this->event_handlers[$event] = $callback;
       return true;
     }
+    /**
+    *
+    *   Remove event handler
+    *
+    *   @param string $event type or * for default handler
+    *   @return boolean sucess
+    **/
+    function remove_event_handler($event)
+    {
+      $event = strtolower($event);
+      if(isset($this->event_handlers[$event]))
+      {
+        unset($this->event_handlers[$event]);
+        return true;
+      }
+      $this->log("$event handler is not defined.");
+      return false;
+    }
 
    /**
     * Process event
@@ -813,7 +861,7 @@
     {
       $ret = false;
       $e = strtolower($parameters['Event']);
-      $this->log("Got event.. $e");		
+      $this->log("Got event.. $e");
 
       $handler = '';
       if(isset($this->event_handlers[$e])) $handler = $this->event_handlers[$e];
@@ -823,6 +871,8 @@
       {
         $this->log("Execute handler $handler");
         $ret = $handler($e, $parameters, $this->server, $this->port);
+      } elseif (is_array($handler)) {
+        $ret = call_user_func($handler, $e, $parameters, $this->server, $this->port);
       }
       else
         $this->log("No event handler for event '$e'");
