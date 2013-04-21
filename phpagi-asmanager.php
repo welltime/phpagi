@@ -88,6 +88,8 @@
     */
     private $event_handlers;
 
+    private $_buffer = NULL;
+
     /**
      * Whether we're successfully logged in
      *
@@ -132,19 +134,79 @@
     function send_request($action, $parameters=array())
     {
       $req = "Action: $action\r\n";
-      foreach($parameters as $var=>$val)
-      {
-        // Модификация. Передача нескольких параметров
-        if (is_array($val))
-          foreach ($val as $l){
-            $req .= "$var: $l\r\n";
+      $actionid = null;
+      foreach ($parameters as $var=>$val) {
+        if (is_array($val)) {
+          foreach ($val as $line) {
+            $req .= "$var: $line\r\n";
           }
-        else
+        } else {
           $req .= "$var: $val\r\n";
+          if (strtolower($var) == "actionid") {
+            $actionid = $val;
+          }
+        }
+      }
+      if (!$actionid) {
+        $actionid = $this->ActionID();
+        $req .= "ActionID: $actionid\r\n";
       }
       $req .= "\r\n";
+
       fwrite($this->socket, $req);
-      return $this->wait_response();
+
+      return $this->wait_response(false, $actionid);
+    }
+
+    function read_one_msg($allow_timeout = false)
+    {
+      $type = null;
+
+      while(false === ($pos = strpos($this->_buffer, "\r\n\r\n"))) {
+        $this->_buffer .= @fgets($this->socket, 4096);
+      }
+      $msg = substr($this->_buffer, 0, $pos);
+      $this->_buffer = substr($this->_buffer, $pos+4);
+
+      $msgarr = explode("\r\n", $msg);
+
+      $parameters = array();
+
+      $r = explode(': ', $msgarr[0]);
+      $type = strtolower($r[0]);
+
+      if ($r[1] == 'Follows') {
+        $str = array_pop($msgarr);
+        $lastline = strpos($str, '--END COMMAND--');
+        if (false !== $lastline) {
+          $parameters['data'] = substr($str, 0, $lastline-1); // cut '\n' too
+        }
+      }
+
+      foreach ($msgarr as $num=>$str) {
+        $kv = explode(': ', $str);
+        $key = $kv[0];
+        $val = $kv[1];
+        $parameters[$key] = $val;
+      }
+
+      // process response
+      switch($type)
+      {
+        case '': // timeout occured
+          $timeout = $allow_timeout;
+          break;
+        case 'event':
+          $this->process_event($parameters);
+          break;
+        case 'response':
+          break;
+        default:
+          $this->log('Unhandled response packet from Manager: ' . print_r($parameters, true));
+          break;
+      }
+
+      return $parameters;
     }
 
    /**
@@ -153,63 +215,43 @@
     * If a request was just sent, this will return the response.
     * Otherwise, it will loop forever, handling events.
     *
+    * XXX this code is slightly better then the original one
+    * however it's still totally screwed up and needs to be rewritten,
+    * for two reasons at least:
+    * 1. it does not handle socket errors in any way
+    * 2. it is terribly synchronous, esp. with eventlists,
+    *    i.e. your code is blocked on waiting until full responce is received
+    *
     * @param boolean $allow_timeout if the socket times out, return an empty array
     * @return array of parameters, empty on timeout
     */
-    function wait_response($allow_timeout=false)
+    function wait_response($allow_timeout = false, $actionid = null)
     {
-      $timeout = false;
-      do
-      {
-        $type = NULL;
-        $parameters = array();
+      $res = array();
+      if ($actionid) {
+        do {
+          $res = $this->read_one_msg($allow_timeout);
+        } while (!( isset($res['ActionID']) && $res['ActionID']==$actionid ));
+      } else {
+        $res = $this->read_one_msg($allow_timeout);
+        return $res;
+      }
 
-        $buffer = trim(fgets($this->socket, 4096));
-        while($buffer != '')
-        {
-          $a = strpos($buffer, ':');
-          if($a)
-          {
-            if(!count($parameters)) // first line in a response?
-            {
-              $type = strtolower(substr($buffer, 0, $a));
-              if(substr($buffer, $a + 2) == 'Follows')
-              {
-                // A follows response means there is a miltiline field that follows.
-                $parameters['data'] = '';
-                $buff = fgets($this->socket, 4096);
-                while(substr($buff, 0, 6) != '--END ')
-                {
-                  $parameters['data'] .= $buff;
-                  $buff = fgets($this->socket, 4096);
-                }
-              }
-            }
+      if (isset($res['EventList']) && $res['EventList']=='start') {
+        $evlist = array();
+        do {
+          $res = $this->wait_response(false, $actionid);
+          if (isset($res['EventList']) && $res['EventList']=='Complete')
+            break;
+          else
+            $evlist[] = $res;
+        } while(true);
+        $res['events'] = $evlist;
+      }
 
-            // store parameter in $parameters
-            $parameters[substr($buffer, 0, $a)] = substr($buffer, $a + 2);
-          }
-          $buffer = trim(fgets($this->socket, 4096));
-        }
-
-        // process response
-        switch($type)
-        {
-          case '': // timeout occured
-            $timeout = $allow_timeout;
-            break;
-          case 'event':
-            $this->process_event($parameters);
-            break;
-          case 'response':
-            break;
-          default:
-            $this->log('Unhandled response packet from Manager: ' . print_r($parameters, true));
-            break;
-        }
-      } while($type != 'response' && !$timeout);
-      return $parameters;
+      return $res;
     }
+
 
    /**
     * Connect to Asterisk
