@@ -622,11 +622,13 @@
     * @param string $queue
     * @param string $interface
     * @param integer $penalty
+    * @param string $memberName
     */
-    function QueueAdd($queue, $interface, $penalty=0)
+    function QueueAdd($queue, $interface, $penalty=0, $memberName = false)
     {
       $parameters = array('Queue'=>$queue, 'Interface'=>$interface);
       if($penalty) $parameters['Penalty'] = $penalty;
+      if($memberName) $parameters["MemberName"] = $memberName;
       return $this->send_request('QueueAdd', $parameters);
     }
 
