@@ -88,6 +88,8 @@
     */
     private $event_handlers;
 
+    private $_buffer = NULL;
+
     /**
      * Whether we're successfully logged in
      *
@@ -95,7 +97,7 @@
      * @var boolean
      */
     private $_logged_in = FALSE;
-    
+
    /**
     * Constructor
     *
@@ -119,6 +121,7 @@
       if(!isset($this->config['asmanager']['port'])) $this->config['asmanager']['port'] = 5038;
       if(!isset($this->config['asmanager']['username'])) $this->config['asmanager']['username'] = 'phpagi';
       if(!isset($this->config['asmanager']['secret'])) $this->config['asmanager']['secret'] = 'phpagi';
+      if(!isset($this->config['asmanager']['write_log'])) $this->config['asmanager']['write_log'] = false;
     }
 
    /**
@@ -131,19 +134,79 @@
     function send_request($action, $parameters=array())
     {
       $req = "Action: $action\r\n";
-      foreach($parameters as $var=>$val)
-      {
-        // Модификация. Передача нескольких параметров
-        if (is_array($val))
-          foreach ($val as $l){
-            $req .= "$var: $l\r\n";
+      $actionid = null;
+      foreach ($parameters as $var=>$val) {
+        if (is_array($val)) {
+          foreach ($val as $line) {
+            $req .= "$var: $line\r\n";
           }
-        else
+        } else {
           $req .= "$var: $val\r\n";
+          if (strtolower($var) == "actionid") {
+            $actionid = $val;
+          }
+        }
+      }
+      if (!$actionid) {
+        $actionid = $this->ActionID();
+        $req .= "ActionID: $actionid\r\n";
       }
       $req .= "\r\n";
+
       fwrite($this->socket, $req);
-      return $this->wait_response();
+
+      return $this->wait_response(false, $actionid);
+    }
+
+    function read_one_msg($allow_timeout = false)
+    {
+      $type = null;
+
+      while(false === ($pos = strpos($this->_buffer, "\r\n\r\n"))) {
+        $this->_buffer .= @fgets($this->socket, 4096);
+      }
+      $msg = substr($this->_buffer, 0, $pos);
+      $this->_buffer = substr($this->_buffer, $pos+4);
+
+      $msgarr = explode("\r\n", $msg);
+
+      $parameters = array();
+
+      $r = explode(': ', $msgarr[0]);
+      $type = strtolower($r[0]);
+
+      if ($r[1] == 'Follows') {
+        $str = array_pop($msgarr);
+        $lastline = strpos($str, '--END COMMAND--');
+        if (false !== $lastline) {
+          $parameters['data'] = substr($str, 0, $lastline-1); // cut '\n' too
+        }
+      }
+
+      foreach ($msgarr as $num=>$str) {
+        $kv = explode(': ', $str);
+        $key = $kv[0];
+        $val = $kv[1];
+        $parameters[$key] = $val;
+      }
+
+      // process response
+      switch($type)
+      {
+        case '': // timeout occured
+          $timeout = $allow_timeout;
+          break;
+        case 'event':
+          $this->process_event($parameters);
+          break;
+        case 'response':
+          break;
+        default:
+          $this->log('Unhandled response packet from Manager: ' . print_r($parameters, true));
+          break;
+      }
+
+      return $parameters;
     }
 
    /**
@@ -152,63 +215,43 @@
     * If a request was just sent, this will return the response.
     * Otherwise, it will loop forever, handling events.
     *
+    * XXX this code is slightly better then the original one
+    * however it's still totally screwed up and needs to be rewritten,
+    * for two reasons at least:
+    * 1. it does not handle socket errors in any way
+    * 2. it is terribly synchronous, esp. with eventlists,
+    *    i.e. your code is blocked on waiting until full responce is received
+    *
     * @param boolean $allow_timeout if the socket times out, return an empty array
     * @return array of parameters, empty on timeout
     */
-    function wait_response($allow_timeout=false)
+    function wait_response($allow_timeout = false, $actionid = null)
     {
-      $timeout = false;
-      do
-      {
-        $type = NULL;
-        $parameters = array();
+      $res = array();
+      if ($actionid) {
+        do {
+          $res = $this->read_one_msg($allow_timeout);
+        } while (!( isset($res['ActionID']) && $res['ActionID']==$actionid ));
+      } else {
+        $res = $this->read_one_msg($allow_timeout);
+        return $res;
+      }
 
-        $buffer = trim(fgets($this->socket, 4096));
-        while($buffer != '')
-        {
-          $a = strpos($buffer, ':');
-          if($a)
-          {
-            if(!count($parameters)) // first line in a response?
-            {
-              $type = strtolower(substr($buffer, 0, $a));
-              if(substr($buffer, $a + 2) == 'Follows')
-              {
-                // A follows response means there is a miltiline field that follows.
-                $parameters['data'] = '';
-                $buff = fgets($this->socket, 4096);
-                while(substr($buff, 0, 6) != '--END ')
-                {
-                  $parameters['data'] .= $buff;
-                  $buff = fgets($this->socket, 4096);
-                }
-              }
-            }
+      if (isset($res['EventList']) && $res['EventList']=='start') {
+        $evlist = array();
+        do {
+          $res = $this->wait_response(false, $actionid);
+          if (isset($res['EventList']) && $res['EventList']=='Complete')
+            break;
+          else
+            $evlist[] = $res;
+        } while(true);
+        $res['events'] = $evlist;
+      }
 
-            // store parameter in $parameters
-            $parameters[substr($buffer, 0, $a)] = substr($buffer, $a + 2);
-          }
-          $buffer = trim(fgets($this->socket, 4096));
-        }
-
-        // process response
-        switch($type)
-        {
-          case '': // timeout occured
-            $timeout = $allow_timeout;
-            break;
-          case 'event':
-            $this->process_event($parameters);
-            break;
-          case 'response':
-            break;
-          default:
-            $this->log('Unhandled response packet from Manager: ' . print_r($parameters, true));
-            break;
-        }
-      } while($type != 'response' && !$timeout);
-      return $parameters;
+      return $res;
     }
+
 
    /**
     * Connect to Asterisk
@@ -344,6 +387,36 @@
       return $this->send_request('Events', array('EventMask'=>$eventmask));
     }
 
+    /**
+    *  Generate random ActionID
+    **/
+    function ActionID()
+    {
+      return "A".sprintf(rand(),"%6d");
+    }
+
+    /**
+    *
+    *  DBGet
+    *  http://www.voip-info.org/wiki/index.php?page=Asterisk+Manager+API+Action+DBGet
+    *  @param string $family key family
+    *  @param string $key key name
+    **/
+    function DBGet($family, $key, $actionid = NULL)
+    {
+      $parameters = array('Family'=>$family, 'Key'=>$key);
+      if($actionid == NULL)
+        $actionid = $this->ActionID();
+      $parameters['ActionID'] = $actionid;
+      $response = $this->send_request("DBGet", $parameters);
+      if($response['Response'] == "Success")
+      {
+        $response = $this->wait_response(false, $actionid);
+        return $response['Val'];
+      }
+      return "";
+    }
+
    /**
     * Check Extension Status
     *
@@ -453,7 +526,7 @@
     * @param string $actionid message matching variable
     */
     function MailboxStatus($mailbox, $actionid=NULL)
-    {	
+    {
       $parameters = array('Mailbox'=>$mailbox);
       if($actionid) $parameters['ActionID'] = $actionid;
       return $this->send_request('MailboxStatus', $parameters);
@@ -516,7 +589,7 @@
       if($actionid) $parameters['ActionID'] = $actionid;
 
       return $this->send_request('Originate', $parameters);
-    }	
+    }
 
    /**
     * List parked calls
@@ -549,11 +622,13 @@
     * @param string $queue
     * @param string $interface
     * @param integer $penalty
+    * @param string $memberName
     */
-    function QueueAdd($queue, $interface, $penalty=0)
+    function QueueAdd($queue, $interface, $penalty=0, $memberName = false)
     {
       $parameters = array('Queue'=>$queue, 'Interface'=>$interface);
       if($penalty) $parameters['Penalty'] = $penalty;
+      if($memberName) $parameters["MemberName"] = $memberName;
       return $this->send_request('QueueAdd', $parameters);
     }
 
@@ -746,7 +821,7 @@
     {
       if($this->pagi != false)
         $this->pagi->conlog($message, $level);
-      else
+      elseif($this->config['asmanager']['write_log'])
         error_log(date('r') . ' - ' . $message);
     }
 
@@ -801,6 +876,24 @@
       $this->event_handlers[$event] = $callback;
       return true;
     }
+    /**
+    *
+    *   Remove event handler
+    *
+    *   @param string $event type or * for default handler
+    *   @return boolean sucess
+    **/
+    function remove_event_handler($event)
+    {
+      $event = strtolower($event);
+      if(isset($this->event_handlers[$event]))
+      {
+        unset($this->event_handlers[$event]);
+        return true;
+      }
+      $this->log("$event handler is not defined.");
+      return false;
+    }
 
    /**
     * Process event
@@ -813,7 +906,7 @@
     {
       $ret = false;
       $e = strtolower($parameters['Event']);
-      $this->log("Got event.. $e");		
+      $this->log("Got event.. $e");
 
       $handler = '';
       if(isset($this->event_handlers[$e])) $handler = $this->event_handlers[$e];
@@ -823,6 +916,8 @@
       {
         $this->log("Execute handler $handler");
         $ret = $handler($e, $parameters, $this->server, $this->port);
+      } elseif (is_array($handler)) {
+        $ret = call_user_func($handler, $e, $parameters, $this->server, $this->port);
       }
       else
         $this->log("No event handler for event '$e'");
