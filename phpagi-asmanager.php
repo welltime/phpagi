@@ -162,9 +162,20 @@
     {
       $type = null;
 
-      while(false === ($pos = strpos($this->_buffer, "\r\n\r\n"))) {
-        $this->_buffer .= @fgets($this->socket, 4096);
-      }
+      do {
+        $buf = fgets($this->socket, 4096);
+        if (false === $buf) {
+          throw new Exception("Error reading from AMI socket");
+        }
+        $this->_buffer .= $buf;
+
+        $pos = strpos($this->_buffer, "\r\n\r\n");
+        if (false !== $pos) {
+          // there's a full message in the buffer
+          break;
+        }
+      } while (!feof($this->socket));
+
       $msg = substr($this->_buffer, 0, $pos);
       $this->_buffer = substr($this->_buffer, $pos+4);
 
