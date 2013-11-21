@@ -195,9 +195,12 @@
       }
 
       foreach ($msgarr as $num=>$str) {
-        $kv = explode(': ', $str);
-        $key = $kv[0];
-        $val = $kv[1];
+        $kv = explode(':', $str, 2);
+        if (!isset($kv[1])) {
+          $kv[1] = "";
+        }
+        $key = trim($kv[0]);
+        $val = trim($kv[1]);
         $parameters[$key] = $val;
       }
 
