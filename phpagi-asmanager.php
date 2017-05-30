@@ -11,7 +11,7 @@
   *
   * This software is released under the terms of the GNU Lesser General Public License v2.1
   *  A copy of which is available from http://www.gnu.org/copyleft/lesser.html
-  * 
+  *
   * We would be happy to list your phpagi based application on the phpagi
   * website.  Drop me an Email if you'd like us to list your program.
   *
@@ -21,7 +21,7 @@
 
 
  /**
-  * Written for PHP 4.3.4, should work with older PHP 4.x versions.  
+  * Written for PHP 4.3.4, should work with older PHP 4.x versions.
   * Please submit bug reports, patches, etc to https://github.com/welltime/phpagi
   *
   */
@@ -656,6 +656,11 @@
     function QueueRemove($queue, $interface)
     {
       return $this->send_request('QueueRemove', array('Queue'=>$queue, 'Interface'=>$interface));
+    }
+
+    function QueueReload()
+    {
+      return $this->send_request('QueueReload');
     }
 
    /**
