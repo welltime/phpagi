@@ -1551,7 +1551,7 @@ class AGI
     {
         $this->asm = new AGI_AsteriskManager(NULL, $this->config['asmanager']);
         $this->asm->pagi =& $this;
-        $this->config['asmanager'] =& $this->asm->config;
+        $this->config['asmanager'] =& $this->asm->config['asmanager'];
         return $this->asm;
     }
 
