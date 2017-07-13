@@ -97,6 +97,11 @@
      * @var boolean
      */
     private $_logged_in = FALSE;
+   
+    public function setPagi(&$agi)
+    {
+      $this->pagi = $agi;
+    }
 
    /**
     * Constructor
@@ -104,7 +109,7 @@
     * @param string $config is the name of the config file to parse or a parent agi from which to read the config
     * @param array $optconfig is an array of configuration vars and vals, stuffed into $this->config['asmanager']
     */
-    function AGI_AsteriskManager($config=NULL, $optconfig=array())
+    function __construct($config=NULL, $optconfig=array())
     {
       // load config
       if(!is_null($config) && file_exists($config))
