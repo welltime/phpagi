@@ -1693,7 +1693,7 @@ class AGI
 
         if (is_null($checkpath)) {
             if (isset($_ENV['PATH'])) {
-                $chpath = $checkpath;
+                $chpath = $_ENV['PATH'];
             } else {
                 $chpath = '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:'.
                     '/usr/X11R6/bin:/usr/local/apache/bin:/usr/local/mysql/bin';
