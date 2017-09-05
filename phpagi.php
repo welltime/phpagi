@@ -1549,9 +1549,9 @@ class AGI
     */
     function &new_AsteriskManager()
     {
-        $this->asm = new AGI_AsteriskManager(NULL, $this->config);
+        $this->asm = new AGI_AsteriskManager(NULL, $this->config['asmanager']);
         $this->asm->pagi =& $this;
-        $this->config =& $this->asm->config;
+        $this->config['asmanager'] =& $this->asm->config['asmanager'];
         return $this->asm;
     }
 
@@ -1690,15 +1690,22 @@ class AGI
     function which($cmd, $checkpath=NULL)
     {
         global $_ENV;
-        $chpath = is_null($checkpath) ? $_ENV['PATH'] : $checkpath;
+
+        if (is_null($checkpath)) {
+            if (isset($_ENV['PATH'])) {
+                $chpath = $_ENV['PATH'];
+            } else {
+                $chpath = '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:'.
+                    '/usr/X11R6/bin:/usr/local/apache/bin:/usr/local/mysql/bin';
+            }
+        } else {
+            $chpath = $checkpath;
+        }
 
         foreach(explode(':', $chpath) as $path)
           if(is_executable("$path/$cmd"))
             return "$path/$cmd";
 
-        if(is_null($checkpath))
-          return $this->which($cmd, '/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:'.
-                                            '/usr/X11R6/bin:/usr/local/apache/bin:/usr/local/mysql/bin');
         return false;
     }
 
