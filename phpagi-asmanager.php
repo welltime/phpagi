@@ -57,6 +57,13 @@
     public $socket = NULL;
 
    /**
+    * Number of reconnect attempts per incident
+    *
+    * @var string
+    */
+    public $reconnects = 2;
+
+   /**
     * Server we are connected to
     *
     * @access public
@@ -133,6 +140,7 @@
     */
     function send_request($action, $parameters=array())
     {
+      $reconnects = $this->reconnects;
       $req = "Action: $action\r\n";
       $actionid = null;
       foreach ($parameters as $var=>$val) {
@@ -155,7 +163,33 @@
 
       fwrite($this->socket, $req);
 
-      return $this->wait_response(false, $actionid);
+      $response = $this->wait_response(false, $actionid);
+        // If we got a false back then something went wrong, we will try to reconnect the manager connection to try again
+        //
+      while ($response === false && $retry && $reconnects > 0) {
+          $this->log("Unexpected failure executing command: $action, reconnecting to manager and retrying: $reconnects");
+          $this->disconnect();
+          if ($this->connect($this->server.':'.$this->port, $this->username, $this->secret) !== false) {
+                if(!$this->connected()) {
+                    throw new Exception("Asterisk is not connected");
+                }
+                fwrite($this->socket, $req);
+                $response = $this->wait_response(false, $actionid);
+            } else {
+                if ($reconnects > 1) {
+                    $this->log("reconnect command failed, sleeping before next attempt");
+                    sleep(1);
+                } else {
+                    $this->log("FATAL: no reconnect attempts left, command permanently failed, returning to calling program with 'false' failure code");
+                }
+            }
+            $reconnects--;
+        }
+        if($action == 'Command' && empty($response['data']) && !empty($response['Output'])) {
+            $response['data'] = $response['Output'];
+            unset($response['Output']);
+        }
+        return $response;
     }
 
     function read_one_msg($allow_timeout = false)
