@@ -78,7 +78,7 @@
     * @access private
     * @var AGI
     */
-    private $pagi;
+    public $pagi = false;
 
    /**
     * Event Handlers
