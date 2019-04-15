@@ -54,7 +54,7 @@
     *
     * @access public
     */
-    public $socket = NULL;
+    public $socket = null;
 
    /**
     * Server we are connected to
@@ -88,7 +88,7 @@
     */
     private $event_handlers;
 
-    private $_buffer = NULL;
+    private $_buffer = null;
 
     /**
      * Whether we're successfully logged in
@@ -96,7 +96,7 @@
      * @access private
      * @var boolean
      */
-    private $_logged_in = FALSE;
+    private $_logged_in = false;
    
     public function setPagi(&$agi)
     {
@@ -109,7 +109,7 @@
     * @param string $config is the name of the config file to parse or a parent agi from which to read the config
     * @param array $optconfig is an array of configuration vars and vals, stuffed into $this->config['asmanager']
     */
-    function __construct($config=NULL, $optconfig=array())
+    function __construct($config=null, $optconfig=array())
     {
       // load config
       if(!is_null($config) && file_exists($config))
@@ -282,7 +282,7 @@
     * @param string $secret
     * @return boolean true on success
     */
-    function connect($server=NULL, $username=NULL, $secret=NULL)
+    function connect($server=null, $username=null, $secret=null)
     {
       // use config if not specified
       if(is_null($server)) $server = $this->config['asmanager']['server'];
@@ -303,7 +303,7 @@
       }
 
       // connect the socket
-      $errno = $errstr = NULL;
+      $errno = $errstr = null;
       $this->socket = @fsockopen($this->server, $this->port, $errno, $errstr);
       if($this->socket == false)
       {
@@ -328,12 +328,12 @@
       $res = $this->send_request('login', array('Username'=>$username, 'Secret'=>$secret));
       if($res['Response'] != 'Success')
       {
-        $this->_logged_in = FALSE;
+        $this->_logged_in = false;
         $this->log("Failed to login.");
         $this->disconnect();
         return false;
       }
-      $this->_logged_in = TRUE;
+      $this->_logged_in = true;
       return true;
     }
 
@@ -344,7 +344,7 @@
     */
     function disconnect()
     {
-      if($this->_logged_in==TRUE)
+      if($this->_logged_in==true)
         $this->logoff();
       fclose($this->socket);
     }
@@ -388,7 +388,7 @@
     * @param string $command
     * @param string $actionid message matching variable
     */
-    function Command($command, $actionid=NULL)
+    function Command($command, $actionid=null)
     {
       $parameters = array('Command'=>$command);
       if($actionid) $parameters['ActionID'] = $actionid;
@@ -421,10 +421,10 @@
     *  @param string $family key family
     *  @param string $key key name
     **/
-    function DBGet($family, $key, $actionid = NULL)
+    function DBGet($family, $key, $actionid = null)
     {
       $parameters = array('Family'=>$family, 'Key'=>$key);
-      if($actionid == NULL)
+      if($actionid == null)
         $actionid = $this->ActionID();
       $parameters['ActionID'] = $actionid;
       $response = $this->send_request("DBGet", $parameters);
@@ -444,7 +444,7 @@
     * @param string $context Context for extension
     * @param string $actionid message matching variable
     */
-    function ExtensionState($exten, $context, $actionid=NULL)
+    function ExtensionState($exten, $context, $actionid=null)
     {
       $parameters = array('Exten'=>$exten, 'Context'=>$context);
       if($actionid) $parameters['ActionID'] = $actionid;
@@ -460,7 +460,7 @@
     * @param string $variable
     * @param string $actionid message matching variable
     */
-    function GetVar($channel, $variable, $actionid=NULL)
+    function GetVar($channel, $variable, $actionid=null)
     {
       $parameters = array('Channel'=>$channel, 'Variable'=>$variable);
       if($actionid) $parameters['ActionID'] = $actionid;
@@ -494,7 +494,7 @@
     * @link http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+ListCommands
     * @param string $actionid message matching variable
     */
-    function ListCommands($actionid=NULL)
+    function ListCommands($actionid=null)
     {
       if($actionid)
         return $this->send_request('ListCommands', array('ActionID'=>$actionid));
@@ -525,7 +525,7 @@
     * @param string $mailbox Full mailbox ID <mailbox>@<vm-context>
     * @param string $actionid message matching variable
     */
-    function MailboxCount($mailbox, $actionid=NULL)
+    function MailboxCount($mailbox, $actionid=null)
     {
       $parameters = array('Mailbox'=>$mailbox);
       if($actionid) $parameters['ActionID'] = $actionid;
@@ -544,7 +544,7 @@
     * @param string $mailbox Full mailbox ID <mailbox>@<vm-context>
     * @param string $actionid message matching variable
     */
-    function MailboxStatus($mailbox, $actionid=NULL)
+    function MailboxStatus($mailbox, $actionid=null)
     {
       $parameters = array('Mailbox'=>$mailbox);
       if($actionid) $parameters['ActionID'] = $actionid;
@@ -560,7 +560,7 @@
     * @param string $format
     * @param boolean $mix
     */
-    function Monitor($channel, $file=NULL, $format=NULL, $mix=NULL)
+    function Monitor($channel, $file=null, $format=null, $mix=null)
     {
       $parameters = array('Channel'=>$channel);
       if($file) $parameters['File'] = $file;
@@ -587,9 +587,9 @@
     * @param string $actionid message matching variable
     */
     function Originate($channel,
-                       $exten=NULL, $context=NULL, $priority=NULL,
-                       $application=NULL, $data=NULL,
-                       $timeout=NULL, $callerid=NULL, $variable=NULL, $account=NULL, $async=NULL, $actionid=NULL)
+                       $exten=null, $context=null, $priority=null,
+                       $application=null, $data=null,
+                       $timeout=null, $callerid=null, $variable=null, $account=null, $async=null, $actionid=null)
     {
       $parameters = array('Channel'=>$channel);
 
@@ -616,7 +616,7 @@
     * @link http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+ParkedCalls
     * @param string $actionid message matching variable
     */
-    function ParkedCalls($actionid=NULL)
+    function ParkedCalls($actionid=null)
     {
       if($actionid)
         return $this->send_request('ParkedCalls', array('ActionID'=>$actionid));
@@ -684,7 +684,7 @@
     * @link http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+QueueStatus
     * @param string $actionid message matching variable
     */
-    function QueueStatus($actionid=NULL)
+    function QueueStatus($actionid=null)
     {
       if($actionid)
         return $this->send_request('QueueStatus', array('ActionID'=>$actionid));
@@ -716,7 +716,7 @@
     * @param string $channel
     * @param string $append
     */
-    function SetCDRUserField($userfield, $channel, $append=NULL)
+    function SetCDRUserField($userfield, $channel, $append=null)
     {
       $parameters = array('UserField'=>$userfield, 'Channel'=>$channel);
       if($append) $parameters['Append'] = $append;
@@ -743,7 +743,7 @@
     * @param string $channel
     * @param string $actionid message matching variable
     */
-    function Status($channel, $actionid=NULL)
+    function Status($channel, $actionid=null)
     {
       $parameters = array('Channel'=>$channel);
       if($actionid) $parameters['ActionID'] = $actionid;
@@ -823,7 +823,7 @@
     * @link http://www.voip-info.org/wiki-Asterisk+Manager+API+Action+ZapShowChannels
     * @param string $actionid message matching variable
     */
-    function ZapShowChannels($actionid=NULL)
+    function ZapShowChannels($actionid=null)
     {
       if($actionid)
         return $this->send_request('ZapShowChannels', array('ActionID'=>$actionid));

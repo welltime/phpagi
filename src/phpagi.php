@@ -112,21 +112,21 @@ class AGI
     *
     * @access private
     */
-    var $in = NULL;
+    var $in = null;
 
     /**
     * Output Stream
     *
     * @access private
     */
-    var $out = NULL;
+    var $out = null;
 
     /**
     * Audio Stream
     *
     * @access public
     */
-    var $audio = NULL;
+    var $audio = null;
 
 
     /**
@@ -142,7 +142,7 @@ class AGI
     * @param string $config is the name of the config file to parse
     * @param array $optconfig is an array of configuration vars and vals, stuffed into $this->config['phpagi']
     */
-    function __construct($config=NULL, $optconfig=array())
+    function __construct($config=null, $optconfig=array())
     {
         // load config
         if(!is_null($config) && file_exists($config))
@@ -157,7 +157,7 @@ class AGI
         // add default values to config for uninitialized values
         if(!isset($this->config['phpagi']['error_handler'])) $this->config['phpagi']['error_handler'] = true;
         if(!isset($this->config['phpagi']['debug'])) $this->config['phpagi']['debug'] = false;
-        if(!isset($this->config['phpagi']['admin'])) $this->config['phpagi']['admin'] = NULL;
+        if(!isset($this->config['phpagi']['admin'])) $this->config['phpagi']['admin'] = null;
         if(!isset($this->config['phpagi']['tempdir'])) $this->config['phpagi']['tempdir'] = AST_TMP_DIR;
 
         // festival TTS config
@@ -405,7 +405,7 @@ class AGI
     *
     * This differs from other commands with return DTMF as numbers representing ASCII characters.
     */
-    function get_data($filename, $timeout=NULL, $max_digits=NULL)
+    function get_data($filename, $timeout=null, $max_digits=null)
     {
         return $this->evaluate(rtrim("GET DATA $filename $timeout $max_digits"));
     }
@@ -421,11 +421,11 @@ class AGI
     * @param boolean $getvalue return the value only
     * @return array, see evaluate for return information. ['result'] is 0 if variable hasn't been set, 1 if it has. ['data'] holds the value. returns value if $getvalue is TRUE
     */
-    function get_variable($variable,$getvalue=FALSE)
+    function get_variable($variable,$getvalue=false)
     {
         $res=$this->evaluate("GET VARIABLE $variable");
 
-        if($getvalue==FALSE)
+        if($getvalue==false)
           return($res);
 
         return($res['data']);
@@ -443,9 +443,9 @@ class AGI
     * @param boolean $getvalue return the value only
     * @return array, see evaluate for return information. ['result'] is 0 if variable hasn't been set, 1 if it has. ['data'] holds the value.  returns value if $getvalue is TRUE
     */
-    function get_fullvariable($variable,$channel=FALSE,$getvalue=FALSE)
+    function get_fullvariable($variable,$channel=false,$getvalue=false)
     {
-      if($channel==FALSE){
+      if($channel==false){
         $req = $variable;
       } else {
         $req = $variable.' '.$channel;
@@ -453,7 +453,7 @@ class AGI
 
       $res=$this->evaluate('GET FULL VARIABLE '.$req);
 
-      if($getvalue==FALSE)
+      if($getvalue==false)
         return($res);
 
       return($res['data']);
@@ -520,7 +520,7 @@ class AGI
     * @return array, see evaluate for return information. ['result'] is -1 on error, 0 on hangup, otherwise a decimal value of the
     * DTMF tone. Use chr() to convert to ASCII.
     */
-    function record_file($file, $format, $escape_digits='', $timeout=-1, $offset=NULL, $beep=false, $silence=NULL)
+    function record_file($file, $format, $escape_digits='', $timeout=-1, $offset=null, $beep=false, $silence=null)
     {
         $cmd = trim("RECORD FILE $file $format \"$escape_digits\" $timeout $offset");
         if($beep) $cmd .= ' BEEP';
@@ -579,7 +579,7 @@ class AGI
     * @return array, see evaluate for return information. ['result'] is -1 on hangup or error, 0 if playback completes with no
     * digit received, otherwise a decimal value of the DTMF tone.  Use chr() to convert to ASCII.
     */
-    function say_time($time=NULL, $escape_digits='')
+    function say_time($time=null, $escape_digits='')
     {
         if(is_null($time)) $time = time();
         return $this->evaluate("SAY TIME $time \"$escape_digits\"");
@@ -876,7 +876,7 @@ class AGI
     * @param string $url
     * @return array, see evaluate for return information.
     */
-    function exec_dial($type, $identifier, $timeout=NULL, $options=NULL, $url=NULL)
+    function exec_dial($type, $identifier, $timeout=null, $options=null, $url=null)
     {
         return $this->exec('Dial', trim("$type/$identifier".$this->option_delim.$timeout.$this->option_delim.$options.$this->option_delim.$url, $this->option_delim));
     }
@@ -892,7 +892,7 @@ class AGI
     * @param string $c;
     * @return array, see evaluate for return information.
     */
-    function exec_goto($a, $b=NULL, $c=NULL)
+    function exec_goto($a, $b=null, $c=null)
     {
         return $this->exec('Goto', trim($a.$this->option_delim.$b.$this->option_delim.$c, $this->option_delim));
     }
@@ -1000,7 +1000,7 @@ class AGI
     * @return array, see evaluate for return information. ['result'] is -1 on hangup or error, 0 if playback completes with no
     * digit received, otherwise a decimal value of the DTMF tone.  Use chr() to convert to ASCII.
     */
-    function fastpass_say_time(&$buffer, $time=NULL, $escape_digits='')
+    function fastpass_say_time(&$buffer, $time=null, $escape_digits='')
     {
      $proceed = false;
      if($escape_digits != '' && $buffer != '')
@@ -1090,7 +1090,7 @@ class AGI
     * @param integer $frequency
     * @return array, see evaluate for return information.
     */
-    function fastpass_swift(&$buffer, $text, $escape_digits='', $frequency=8000, $voice=NULL)
+    function fastpass_swift(&$buffer, $text, $escape_digits='', $frequency=8000, $voice=null)
     {
      $proceed = false;
      if($escape_digits != '' && $buffer != '')
@@ -1173,7 +1173,7 @@ class AGI
     *
     * This differs from other commands with return DTMF as numbers representing ASCII characters.
     */
-    function fastpass_get_data(&$buffer, $filename, $timeout=NULL, $max_digits=NULL)
+    function fastpass_get_data(&$buffer, $filename, $timeout=null, $max_digits=null)
     {
      if(is_null($max_digits) || strlen($buffer) < $max_digits)
      {
@@ -1216,7 +1216,7 @@ class AGI
     function menu($choices, $timeout=2000)
     {
         $keys = join('', array_keys($choices));
-        $choice = NULL;
+        $choice = null;
         while(is_null($choice))
         {
           foreach($choices as $prompt)
@@ -1276,7 +1276,7 @@ class AGI
     * @param string $callerid
     * @return array('Name'=>$name, 'Number'=>$number)
     */
-    function parse_callerid($callerid=NULL)
+    function parse_callerid($callerid=null)
     {
         if(is_null($callerid))
           $callerid = $this->request['agi_callerid'];
@@ -1377,7 +1377,7 @@ class AGI
     * @param integer $frequency
     * @return array, see evaluate for return information.
     */
-    function swift($text, $escape_digits='', $frequency=8000, $voice=NULL)
+    function swift($text, $escape_digits='', $frequency=8000, $voice=null)
     {
         if(!is_null($voice))
           $voice = "-n $voice";
@@ -1549,7 +1549,7 @@ class AGI
     */
     function &new_AsteriskManager()
     {
-        $this->asm = new AGI_AsteriskManager(NULL, $this->config['asmanager']);
+        $this->asm = new AGI_AsteriskManager(null, $this->config['asmanager']);
         $this->asm->setPagi($this);
         $this->config['asmanager'] =& $this->asm->config['asmanager'];
         return $this->asm;
@@ -1615,7 +1615,7 @@ class AGI
           }
         }
 
-        $ret['result'] = NULL;
+        $ret['result'] = null;
         $ret['data'] = '';
         if($ret['code'] != AGIRES_OK) // some sort of error
         {
@@ -1687,7 +1687,7 @@ class AGI
     * @param string $checkpath path to check
     * @return string the path to the command
     */
-    function which($cmd, $checkpath=NULL)
+    function which($cmd, $checkpath=null)
     {
         if (is_null($checkpath)) {
             $chpath = getenv('PATH');
@@ -1722,13 +1722,13 @@ class AGI
         {
           $base .= $f[$i];
           if($f[$i] != '' && !file_exists($base)) {
-            if(mkdir($base, $perms)==FALSE){
-              return(FALSE);
+            if(mkdir($base, $perms)==false){
+              return(false);
             }
           }
           $base .= DIRECTORY_SEPARATOR;
         }
-        return(TRUE);
+        return(true);
     }
 
 }
@@ -1779,7 +1779,7 @@ class AGI
         // figure out who we are
         if(function_exists('socket_create'))
         {
-          $addr = NULL;
+          $addr = null;
           $port = 80;
           $socket = @socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);
           @socket_connect($socket, '64.0.0.0', $port);
@@ -1826,5 +1826,5 @@ class AGI
     }
   }
 
-  $phpagi_error_handler_email = NULL;
+  $phpagi_error_handler_email = null;
 
