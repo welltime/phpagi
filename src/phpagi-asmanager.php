@@ -97,7 +97,7 @@
      * @var boolean
      */
     private $_logged_in = false;
-   
+
     public function setPagi(&$agi)
     {
       $this->pagi = $agi;
@@ -706,6 +706,12 @@
     {
       return $this->send_request('Redirect', array('Channel'=>$channel, 'ExtraChannel'=>$extrachannel, 'Exten'=>$exten,
                                                    'Context'=>$context, 'Priority'=>$priority));
+    }
+
+    function Atxfer($channel, $exten, $context, $priority)
+    {
+        return $this->send_request('Atxfer', array('Channel'=>$channel, 'Exten'=>$exten,
+            'Context'=>$context, 'Priority'=>$priority));
     }
 
    /**
