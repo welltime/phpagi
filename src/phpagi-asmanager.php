@@ -726,6 +726,12 @@
                                                    'Context'=>$context, 'Priority'=>$priority));
     }
 
+    function Atxfer($channel, $exten, $context, $priority)
+    {
+        return $this->send_request('Atxfer', array('Channel'=>$channel, 'Exten'=>$exten,
+            'Context'=>$context, 'Priority'=>$priority));
+    }
+
    /**
     * Set the CDR UserField
     *
