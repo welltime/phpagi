@@ -97,7 +97,7 @@
      * @var boolean
      */
     private $_logged_in = false;
-   
+
     public function setPagi(&$agi)
     {
       $this->pagi = $agi;
@@ -191,12 +191,30 @@
       $r = explode(': ', $msgarr[0]);
       $type = strtolower($r[0]);
 
-      if ($r[1] == 'Follows') {
-        $str = array_pop($msgarr);
-        $lastline = strpos($str, '--END COMMAND--');
-        if (false !== $lastline) {
-          $parameters['data'] = substr($str, 0, $lastline-1); // cut '\n' too
-        }
+      if ($r[1] == 'Success' || $r[1] == 'Follows') {
+          $m = explode(': ', $msgarr[2]);
+          $msgarr_tmp = $msgarr;
+          $str = array_pop($msgarr);
+          $lastline = strpos($str, '--END COMMAND--');
+          if (false !== $lastline) {
+              $parameters['data'] = substr($str, 0, $lastline-1); // cut '\n' too
+          } else {
+              if ($m[1] == 'Command output follows') {
+                  $n = 3;
+                  $c = count($msgarr_tmp) - 1;
+                  $output = explode(': ', $msgarr_tmp[3]);
+                  if ($output[1]) {
+                      $data = $output[1];
+                      while ($n++<$c) {
+                          $output = explode(': ', $msgarr_tmp[$n]);
+                          if ($output[1]) {
+                              $data .= "\n".$output[1];
+                          }
+                      }
+                      $parameters['data'] = $data;
+                  }
+              }
+          }
       }
 
       foreach ($msgarr as $num=>$str) {
