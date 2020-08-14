@@ -529,6 +529,19 @@ class AGI
     }
 
     /**
+    * Say a given character string, returning early if any of the given DTMF digits are received on the channel.
+    *
+    * @link https://www.voip-info.org/say-alpha
+    * @param string $text
+    * @param string $escape_digits
+    * @return array, see evaluate for return information. ['result'] is -1 on hangup or error, 0 if playback completes with no
+    * digit received, otherwise a decimal value of the DTMF tone.  Use chr() to convert to ASCII.
+    */
+    function say_alpha($text, $escape_digits='')
+    {
+        return $this->evaluate("SAY ALPHA $text \"$escape_digits\"");
+    }
+    /**
     * Say the given digit string, returning early if any of the given DTMF escape digits are received on the channel.
     *
     * @link http://www.voip-info.org/wiki-say+digits
@@ -1773,8 +1786,14 @@ class AGI
         $subject = "$basefile/$line/$level: $message";
         $message = "$level: $message in $file on line $line\n\n";
 
-        if(function_exists('mysql_errno') && strpos(' '.strtolower($message), 'mysql'))
-          $message .= 'MySQL error ' . mysql_errno() . ": " . mysql_error() . "\n\n";
+        if(strpos(' '.strtolower($message), 'mysql')) {
+            if(function_exists('mysql_errno')) {
+                $message .= 'MySQL error ' . mysql_errno() . ": " . mysql_error() . "\n\n";
+            }
+            else if(function_exists('mysqli_errno')) {
+                $message .= 'MySQL error ' . mysqli_errno() . ": " . mysqli_error() . "\n\n";
+            }
+        }
 
         // figure out who we are
         if(function_exists('socket_create'))
