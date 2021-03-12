@@ -412,6 +412,20 @@
       if($actionid) $parameters['ActionID'] = $actionid;
       return $this->send_request('Command', $parameters);
     }
+   
+   /**
+    * Core Show Channels
+    *
+    * @link https://www.voip-info.org/asterisk-manager-api/#ManagerActions
+    * @param string $actionid message matching variable
+    */
+    function CoreShowChannels($actionid=NULL)
+    {
+      if($actionid)
+        return $this->send_request('CoreShowChannels', array('ActionID'=>$actionid));
+      else
+        return $this->send_request('CoreShowChannels');
+    }   
 
    /**
     * Enable/Disable sending of events to this manager
