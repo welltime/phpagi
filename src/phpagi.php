@@ -1756,7 +1756,7 @@ class AGI
  * @param integer $line line number of error
  * @param array $context variables in the current scope
  */
-function phpagi_error_handler($level, $message, $file, $line, $context)
+function phpagi_error_handler($level, $message, $file, $line, $context=null)
 {
     if(ini_get('error_reporting') == 0) return; // this happens with an @
 
