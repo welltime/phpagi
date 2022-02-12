@@ -26,13 +26,13 @@ The preferred way to install this extension is through [composer](https://getcom
 Either run
 
 ```bash
-$ composer require welltime/phpagi ^2.20
+$ composer require ggets/phpagi ^2.20
 ```
 
 or add
 
 ```
-"welltime/phpagi": "^2.20"
+"ggets/phpagi": "^2.20"
 ```
 
 to the ```require``` section of your `composer.json` file.
@@ -61,5 +61,5 @@ SUPPORT
 
 Support for phpagi is available from the project website. 
 
- * https://github.com/welltime/phpagi
+ * https://github.com/ggets/phpagi
 
