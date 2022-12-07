@@ -188,11 +188,11 @@
 
       $parameters = array();
 
-      $r = explode(': ', $msgarr[0]);
+      $r = explode(': ', $msgarr[0], 2);
       $type = strtolower($r[0]);
 
       if ($r[1] == 'Success' || $r[1] == 'Follows') {
-          $m = explode(': ', $msgarr[2]);
+          $m = explode(': ', $msgarr[2], 2);
           $msgarr_tmp = $msgarr;
           $str = array_pop($msgarr);
           $lastline = strpos($str, '--END COMMAND--');
@@ -200,17 +200,10 @@
               $parameters['data'] = substr($str, 0, $lastline-1); // cut '\n' too
           } else {
               if ($m[1] == 'Command output follows') {
-                  $n = 3;
-                  $c = count($msgarr_tmp) - 1;
-                  $output = explode(': ', $msgarr_tmp[3]);
-                  if ($output[1]) {
-                      $data = $output[1];
-                      while ($n++<$c) {
-                          $output = explode(': ', $msgarr_tmp[$n]);
-                          if ($output[1]) {
-                              $data .= "\n".$output[1];
-                          }
-                      }
+                  $data = '';				  
+                  for ($n=3; $n <= count($msgarr_tmp) - 1; $n++) {
+                      $output = explode(': ', $msgarr_tmp[$n], 2);
+                      $data .= ($n > 3?"\n":"") . $output[1];
                       $parameters['data'] = $data;
                   }
               }
